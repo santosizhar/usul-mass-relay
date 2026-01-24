@@ -1,0 +1,14 @@
+{
+  "playbook_id": "pb-ops-automation-v1",
+  "stored_at": "2025-01-15T13:00:00Z",
+  "format": "json",
+  "version": "v1",
+  "storage": {
+    "provider_id": "store-001",
+    "namespace_id": "ns-playbooks",
+    "object_path": "playbooks/pb-ops-automation-v1/playbook.json",
+    "checksum": "sha256:9f8e7d6c5b4a3a2b1c0d9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b",
+    "size_bytes": 2048,
+    "content_type": "application/json"
+  }
+}
