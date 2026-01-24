@@ -1,0 +1,30 @@
+{
+  "sandbox_id": "01J9Z1B3C4D5E6F7G8H9J0K1L2",
+  "name": "Python lane default sandbox",
+  "version": "1.0.0",
+  "owner": "foundation@mass-relay",
+  "created_at": "2025-01-06T09:00:00Z",
+  "updated_at": "2025-01-06T09:00:00Z",
+  "execution_lane": "python",
+  "filesystem": {
+    "mode": "read-only",
+    "read_paths": ["/workspace", "/tmp"],
+    "write_paths": ["/tmp"]
+  },
+  "network": {
+    "mode": "allowlist",
+    "allow_hosts": ["artifact-store.internal"],
+    "allow_ports": [443]
+  },
+  "environment": {
+    "allowlist": ["PYTHONHASHSEED", "RUN_ID", "TRACE_ID"]
+  },
+  "resources": {
+    "cpu_cores": 0.5,
+    "memory_mb": 512,
+    "timeout_seconds": 60
+  },
+  "logging": {
+    "redact_patterns": ["secret", "token", "password"]
+  }
+}

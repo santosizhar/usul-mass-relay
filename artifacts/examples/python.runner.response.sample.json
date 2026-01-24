@@ -1,0 +1,17 @@
+{
+  "request_id": "01J9Z0W8R4F5A6B7C8D9E0F1G2",
+  "run_id": "01J9Z0X9S4J5K6L7M8N9P0Q1R2",
+  "tool_id": "tool.fetch-object-storage",
+  "tool_version": "2025.01",
+  "status": "success",
+  "started_at": "2025-01-05T10:05:01Z",
+  "finished_at": "2025-01-05T10:05:02Z",
+  "output": {
+    "uri": "s3://mass-relay-snapshots/runs/01J9Z0X9S4J5K6L7M8N9P0Q1R2/summary.json",
+    "content_type": "application/json"
+  },
+  "trace": {
+    "trace_id": "trace-0a1b2c3d4e",
+    "span_id": "span-6f7g8h9i0j"
+  }
+}

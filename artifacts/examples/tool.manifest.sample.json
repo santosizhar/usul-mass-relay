@@ -1,0 +1,53 @@
+{
+  "manifest_id": "01J9Z0T7Y1MR2W3P4Q5N6R7S8T",
+  "name": "Governed Execution Tooling",
+  "version": "1.0.0",
+  "owner": "foundation@mass-relay",
+  "created_at": "2025-01-05T10:00:00Z",
+  "updated_at": "2025-01-05T10:00:00Z",
+  "tools": [
+    {
+      "tool_id": "tool.fetch-object-storage",
+      "name": "Fetch object storage asset",
+      "description": "Retrieve an object from governed storage for analysis.",
+      "version": "2025.01",
+      "execution_lane": "python",
+      "contract": {
+        "request_schema": {
+          "type": "object",
+          "properties": {
+            "bucket": { "type": "string" },
+            "key": { "type": "string" }
+          },
+          "required": ["bucket", "key"]
+        },
+        "response_schema": {
+          "type": "object",
+          "properties": {
+            "uri": { "type": "string" },
+            "content_type": { "type": "string" }
+          },
+          "required": ["uri", "content_type"]
+        },
+        "error_schema": {
+          "type": "object",
+          "properties": {
+            "code": { "type": "string" },
+            "message": { "type": "string" }
+          },
+          "required": ["code", "message"]
+        }
+      },
+      "governance": {
+        "level": "A2",
+        "requires_hitl": true,
+        "requires_run_logging": true
+      },
+      "constraints": {
+        "timeout_seconds": 45,
+        "max_retries": 1
+      },
+      "policy_refs": ["gov-policy-storage"]
+    }
+  ]
+}

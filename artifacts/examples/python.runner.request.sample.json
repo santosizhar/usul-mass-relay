@@ -1,0 +1,22 @@
+{
+  "request_id": "01J9Z0W8R4F5A6B7C8D9E0F1G2",
+  "run_id": "01J9Z0X9S4J5K6L7M8N9P0Q1R2",
+  "tool_id": "tool.fetch-object-storage",
+  "tool_version": "2025.01",
+  "requested_at": "2025-01-05T10:05:00Z",
+  "caller": "ops-automation-studio",
+  "input": {
+    "bucket": "mass-relay-snapshots",
+    "key": "runs/01J9Z0X9S4J5K6L7M8N9P0Q1R2/summary.json"
+  },
+  "governance": {
+    "level": "A2",
+    "requires_hitl": true,
+    "requires_run_logging": true
+  },
+  "trace": {
+    "trace_id": "trace-0a1b2c3d4e",
+    "span_id": "span-6f7g8h9i0j"
+  },
+  "timeout_seconds": 45
+}

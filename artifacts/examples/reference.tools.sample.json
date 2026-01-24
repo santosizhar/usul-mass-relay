@@ -1,0 +1,47 @@
+{
+  "catalog_id": "01J9Z1F5G6H7J8K9L0M1N2P3Q4",
+  "name": "Python lane reference tools",
+  "version": "1.0.0",
+  "owner": "foundation@mass-relay",
+  "created_at": "2025-01-06T09:15:00Z",
+  "updated_at": "2025-01-06T09:15:00Z",
+  "tools": [
+    {
+      "tool_id": "tool.fetch-object-storage",
+      "name": "Fetch object storage asset",
+      "description": "Retrieve an object from governed storage for analysis.",
+      "version": "2025.01",
+      "execution_lane": "python",
+      "entrypoint": "reference_tools.fetch_object_storage.run",
+      "request_example": {
+        "bucket": "mass-relay-snapshots",
+        "key": "runs/01J9Z1F5G6H7J8K9L0M1N2P3Q4/summary.json"
+      },
+      "response_example": {
+        "uri": "s3://mass-relay-snapshots/runs/01J9Z1F5G6H7J8K9L0M1N2P3Q4/summary.json",
+        "content_type": "application/json"
+      }
+    },
+    {
+      "tool_id": "tool.record-run-summary",
+      "name": "Record run summary",
+      "description": "Persist a run summary to governed storage for auditing.",
+      "version": "2025.01",
+      "execution_lane": "python",
+      "entrypoint": "reference_tools.record_run_summary.run",
+      "request_example": {
+        "summary": {
+          "run_id": "01J9Z1F5G6H7J8K9L0M1N2P3Q4",
+          "status": "success"
+        }
+      },
+      "response_example": {
+        "recorded": true,
+        "summary": {
+          "run_id": "01J9Z1F5G6H7J8K9L0M1N2P3Q4",
+          "status": "success"
+        }
+      }
+    }
+  ]
+}
