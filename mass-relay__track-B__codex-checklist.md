@@ -21,64 +21,164 @@ Hard locks:
 - Every operation emits a Run
 
 Track specialization:
-- Run-centric observability (models, persistence, helpers, UI surfacing).
+- Run-centric observability
 
 ## Sprint B1 — Run model & schemas
 
 Objective:
-- Establish the canonical Run Envelope v1 data model and validator.
+- Complete Track B Sprint B1 deliverables at execution-grade quality.
 
 Codex tasks:
-1. Define TypeScript types for RunEnvelopeV1, including header, spans, events, IO, cost, and quality.
-2. Define a stable RunId format and helper generator.
-3. Create a JSON Schema v1 that mirrors the TS types exactly.
-4. Implement a validator that returns structured, human-readable errors.
-5. Add unit tests validating one correct and one incorrect run envelope.
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
 
 Constraints:
-- No persistence or exporters in this sprint
-- No UI changes
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
 
 Primary paths:
-- packages/foundation-observability/src/run/**
-- packages/foundation-observability/src/schema/**
-- packages/foundation-observability/test/**
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
 
 Acceptance criteria:
-- Valid run envelope passes validation
-- Invalid envelope fails with clear error messages
-- All types compile and are exported
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
 
 References:
-- docs/contracts/run-envelope-v1.md
-- MP3 observability posture
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
 
 ## Sprint B2 — Run persistence & exporter
 
 Objective:
-- Persist Run envelopes deterministically to local artifacts for inspection and UI use.
+- Complete Track B Sprint B2 deliverables at execution-grade quality.
 
 Codex tasks:
-1. Implement a file exporter that writes artifacts/runs/<RUN_ID>/run.json for each completed run.
-2. Ensure exporter is idempotent for the same RUN_ID.
-3. Create an append-only index.jsonl with runId, timestamps, status, project.
-4. Implement a reader that lists runs using only the index.
-5. Add tests creating multiple runs and verifying file structure and index contents.
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
 
 Constraints:
-- No database usage
-- No UI work
-- Local filesystem only
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
 
 Primary paths:
-- packages/foundation-observability/src/export/**
-- packages/foundation-observability/src/index/**
-- artifacts/runs/**
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
 
 Acceptance criteria:
-- Each run produces one run.json under its own folder
-- index.jsonl lists all runs deterministically
-- Exporter tests pass
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
 
 References:
-- B1 Run Envelope schema
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
+
+## Sprint B3 — Instrumentation helpers
+
+Objective:
+- Complete Track B Sprint B3 deliverables at execution-grade quality.
+
+Codex tasks:
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
+
+Constraints:
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
+
+Primary paths:
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
+
+Acceptance criteria:
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
+
+References:
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
+
+## Sprint B4 — Control Room runs UI
+
+Objective:
+- Complete Track B Sprint B4 deliverables at execution-grade quality.
+
+Codex tasks:
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
+
+Constraints:
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
+
+Primary paths:
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
+
+Acceptance criteria:
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
+
+References:
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
+
+## Sprint B5 — Review
+
+Objective:
+- Complete Track B Sprint B5 deliverables at execution-grade quality.
+
+Codex tasks:
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
+
+Constraints:
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
+
+Primary paths:
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
+
+Acceptance criteria:
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
+
+References:
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md

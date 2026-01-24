@@ -21,27 +21,164 @@ Hard locks:
 - Every operation emits a Run
 
 Track specialization:
-- Read-only Control Room UI.
+- Control Room UI
 
-## Sprint F1 — UI scaffold
+## Sprint F1 — App scaffold
 
 Objective:
-- Provide navigable read-only Control Room shell.
+- Complete Track F Sprint F1 deliverables at execution-grade quality.
 
 Codex tasks:
-1. Add layout shell.
-2. Add /runs and /playbooks routes.
-3. Add empty states.
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
 
 Constraints:
-- No write actions
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
 
 Primary paths:
-- apps/control-room/**
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
 
 Acceptance criteria:
-- Routes load
-- No mutations
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
 
 References:
-- MP3 Control Room beta
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
+
+## Sprint F2 — Runs list
+
+Objective:
+- Complete Track F Sprint F2 deliverables at execution-grade quality.
+
+Codex tasks:
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
+
+Constraints:
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
+
+Primary paths:
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
+
+Acceptance criteria:
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
+
+References:
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
+
+## Sprint F3 — Run detail
+
+Objective:
+- Complete Track F Sprint F3 deliverables at execution-grade quality.
+
+Codex tasks:
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
+
+Constraints:
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
+
+Primary paths:
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
+
+Acceptance criteria:
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
+
+References:
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
+
+## Sprint F4 — Playbook explorer
+
+Objective:
+- Complete Track F Sprint F4 deliverables at execution-grade quality.
+
+Codex tasks:
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
+
+Constraints:
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
+
+Primary paths:
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
+
+Acceptance criteria:
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
+
+References:
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
+
+## Sprint F5 — Review
+
+Objective:
+- Complete Track F Sprint F5 deliverables at execution-grade quality.
+
+Codex tasks:
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
+
+Constraints:
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
+
+Primary paths:
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
+
+Acceptance criteria:
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
+
+References:
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md

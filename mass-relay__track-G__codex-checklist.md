@@ -21,26 +21,164 @@ Hard locks:
 - Every operation emits a Run
 
 Track specialization:
-- Testing and regression baseline.
+- Testing & regression
 
 ## Sprint G1 — Schema tests
 
 Objective:
-- Validate all schemas via automated tests.
+- Complete Track G Sprint G1 deliverables at execution-grade quality.
 
 Codex tasks:
-1. Add schema test harness.
-2. Test run, playbook, and tool schemas.
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
 
 Constraints:
-- No new schemas
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
 
 Primary paths:
-- packages/foundation-testing/**
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
 
 Acceptance criteria:
-- Tests pass
-- Clear failures
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
 
 References:
-- Tracks B/C/D schemas
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
+
+## Sprint G2 — Golden runs
+
+Objective:
+- Complete Track G Sprint G2 deliverables at execution-grade quality.
+
+Codex tasks:
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
+
+Constraints:
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
+
+Primary paths:
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
+
+Acceptance criteria:
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
+
+References:
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
+
+## Sprint G3 — TS↔Python contract tests
+
+Objective:
+- Complete Track G Sprint G3 deliverables at execution-grade quality.
+
+Codex tasks:
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
+
+Constraints:
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
+
+Primary paths:
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
+
+Acceptance criteria:
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
+
+References:
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
+
+## Sprint G4 — Boundary enforcement
+
+Objective:
+- Complete Track G Sprint G4 deliverables at execution-grade quality.
+
+Codex tasks:
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
+
+Constraints:
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
+
+Primary paths:
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
+
+Acceptance criteria:
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
+
+References:
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
+
+## Sprint G5 — Review
+
+Objective:
+- Complete Track G Sprint G5 deliverables at execution-grade quality.
+
+Codex tasks:
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
+
+Constraints:
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
+
+Primary paths:
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
+
+Acceptance criteria:
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
+
+References:
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md

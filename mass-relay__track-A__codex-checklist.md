@@ -21,33 +21,164 @@ Hard locks:
 - Every operation emits a Run
 
 Track specialization:
-- Repo scaffolding, contracts, and boundary enforcement.
+- Repo, contracts, conventions
 
 ## Sprint A1 — Repo initialization
 
 Objective:
-- Create a buildable greenfield monorepo matching locked layout.
+- Complete Track A Sprint A1 deliverables at execution-grade quality.
 
 Codex tasks:
-1. Create apps/, packages/, projects/, docs/, artifacts/ directories.
-2. Scaffold a buildable TypeScript workspace with root configs.
-3. Create empty Control Room Next.js app.
-4. Create empty Foundation packages with index.ts exports.
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
 
 Constraints:
-- No project logic
-- No Python
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
 
 Primary paths:
-- apps/**
-- packages/**
-- docs/**
-- projects/**
-- artifacts/**
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
 
 Acceptance criteria:
-- Repo builds
-- Control Room app starts
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
 
 References:
-- MP1 layout lock
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
+
+## Sprint A2 — Terminology & governance docs
+
+Objective:
+- Complete Track A Sprint A2 deliverables at execution-grade quality.
+
+Codex tasks:
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
+
+Constraints:
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
+
+Primary paths:
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
+
+Acceptance criteria:
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
+
+References:
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
+
+## Sprint A3 — Run & artifact conventions
+
+Objective:
+- Complete Track A Sprint A3 deliverables at execution-grade quality.
+
+Codex tasks:
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
+
+Constraints:
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
+
+Primary paths:
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
+
+Acceptance criteria:
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
+
+References:
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
+
+## Sprint A4 — Ops Automation Studio scaffold
+
+Objective:
+- Complete Track A Sprint A4 deliverables at execution-grade quality.
+
+Codex tasks:
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
+
+Constraints:
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
+
+Primary paths:
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
+
+Acceptance criteria:
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
+
+References:
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
+
+## Sprint A5 — Review
+
+Objective:
+- Complete Track A Sprint A5 deliverables at execution-grade quality.
+
+Codex tasks:
+1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
+2. Ensure all new artifacts are deterministic, traceable, and versionable.
+3. Add tests, fixtures, or checks that prove the sprint’s artifacts behave as intended.
+4. Update documentation describing the artifacts, boundaries, and known limitations.
+
+Constraints:
+- No scope expansion beyond this sprint.
+- No cross-track or cross-layer violations.
+- No silent changes to previously agreed contracts.
+
+Primary paths:
+- apps/ (UI-only sprints)
+- packages/ (Foundation modules)
+- projects/ (Reference project only)
+- docs/
+- artifacts/
+
+Acceptance criteria:
+- All sprint artifacts exist in the expected locations.
+- All tests/checks pass.
+- Documentation is updated and internally consistent.
+
+References:
+- mass-relay__roadmap.md
+- MP3__mass-relay__executive-summary.md
