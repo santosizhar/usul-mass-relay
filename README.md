@@ -23,6 +23,17 @@ sprint coverage includes:
 - **A4 — Ops Automation Studio scaffold**: reference project structure for Project A.
 - **A5 — Review**: consolidated review of Track A artifacts and gaps.
 
+## Track B scope
+
+Track B introduces Run-centric observability artifacts and reference helpers. The current sprint
+coverage includes:
+
+- **B1 — Run model & schemas**: Run record interfaces and JSON schema definitions.
+- **B2 — Run persistence & exporter**: file-based Run persistence and deterministic exports.
+- **B3 — Instrumentation helpers**: event contracts and summary helpers for Runs.
+- **B4 — Control Room runs UI**: read-only UI specification and configuration.
+- **B5 — Review**: consolidated review of Track B artifacts and gaps.
+
 ## Guardrails
 
 - Prompt Pack refers only to MP1/MP2/MP3 artifacts.

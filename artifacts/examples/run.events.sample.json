@@ -1,0 +1,26 @@
+[
+  {
+    "event_id": "evt-0001",
+    "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E4",
+    "timestamp": "2024-01-01T00:00:00Z",
+    "type": "start",
+    "message": "Run started",
+    "metadata": {
+      "lane": "control-plane"
+    }
+  },
+  {
+    "event_id": "evt-0002",
+    "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E4",
+    "timestamp": "2024-01-01T00:00:01Z",
+    "type": "step",
+    "message": "Validated run schema"
+  },
+  {
+    "event_id": "evt-0003",
+    "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E4",
+    "timestamp": "2024-01-01T00:00:02Z",
+    "type": "finish",
+    "message": "Run completed"
+  }
+]
