@@ -1,0 +1,27 @@
+[
+  {
+    "audit_id": "audit-0001",
+    "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E4",
+    "timestamp": "2024-02-01T00:00:00Z",
+    "actor": "control-plane.ops-triage",
+    "action": "hitl.requested",
+    "target": "hitl-req-001",
+    "status": "success",
+    "metadata": {
+      "playbook_id": "playbook-ops-triage",
+      "step_id": "step-propose-remediation"
+    }
+  },
+  {
+    "audit_id": "audit-0002",
+    "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E4",
+    "timestamp": "2024-02-01T00:05:00Z",
+    "actor": "human.reviewer",
+    "action": "hitl.approved",
+    "target": "hitl-req-001",
+    "status": "success",
+    "metadata": {
+      "reason": "Plan aligns with incident response protocol."
+    }
+  }
+]

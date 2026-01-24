@@ -21,6 +21,20 @@ lanes interact.
 - Every operation emits a Run with traceability metadata.
 - Observability, cost, and quality signals are mandatory for all automation paths.
 
+## Governance policy ladder (A0–A3)
+
+Governance policies define action boundaries for Agent Playbooks and control-plane workflows.
+The canonical schema lives in `packages/governance-policy/src/governance-policy.schema.json`
+with a sample record in `artifacts/examples/governance.policy.sample.json`.
+
+Levels:
+
+- **A0**: Read-only insight with no external side effects.
+- **A1**: Draft recommendations; no execution without human review.
+- **A2**: Proposed changes; requires approval before execution.
+- **A3**: Governed execution; approved actions with strict logging and audit trails.
+
 ## Limitations
 
-This governance model is scoped to Track A sprints A1 and A2 and will expand in later tracks.
+This governance model now includes the Track C policy ladder definition but does not yet include
+runtime enforcement or approval workflows.

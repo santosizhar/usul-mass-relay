@@ -1,0 +1,42 @@
+[
+  {
+    "registry_id": "registry-playbook-ops-triage",
+    "item_type": "playbook",
+    "item_id": "playbook-ops-triage",
+    "owner": "foundation.governance",
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-02-01T00:00:00Z",
+    "versions": [
+      {
+        "version": "1.0.0",
+        "status": "active",
+        "released_at": "2024-02-01T00:00:00Z",
+        "checksum": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+        "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E4",
+        "artifact_refs": [
+          "artifacts/examples/agent-playbook.sample.json"
+        ]
+      }
+    ]
+  },
+  {
+    "registry_id": "registry-policy-core",
+    "item_type": "policy",
+    "item_id": "gov-policy-core",
+    "owner": "foundation.governance",
+    "created_at": "2024-01-01T00:00:00Z",
+    "updated_at": "2024-02-01T00:00:00Z",
+    "versions": [
+      {
+        "version": "1.0.0",
+        "status": "active",
+        "released_at": "2024-02-01T00:00:00Z",
+        "checksum": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+        "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E4",
+        "artifact_refs": [
+          "artifacts/examples/governance.policy.sample.json"
+        ]
+      }
+    ]
+  }
+]

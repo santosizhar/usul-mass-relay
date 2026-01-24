@@ -1,0 +1,52 @@
+{
+  "playbook_id": "playbook-ops-triage",
+  "name": "Ops Triage",
+  "version": "1.0.0",
+  "description": "Triage operational alerts and generate a remediation plan.",
+  "owner": "foundation.governance",
+  "created_at": "2024-01-01T00:00:00Z",
+  "updated_at": "2024-01-15T00:00:00Z",
+  "runtime": {
+    "lane": "control-plane",
+    "entrypoint": "packages/agent-playbook/src/ops-triage.ts"
+  },
+  "inputs": [
+    "alerts.queue",
+    "run.context"
+  ],
+  "outputs": [
+    "artifacts/ops/triage.plan.json"
+  ],
+  "governance": {
+    "policy_id": "gov-policy-core",
+    "level": "A2"
+  },
+  "steps": [
+    {
+      "step_id": "step-collect-signal",
+      "name": "Collect signals",
+      "purpose": "Aggregate alert context and incident metadata.",
+      "action": "aggregate.alerts",
+      "inputs": [
+        "alerts.queue"
+      ],
+      "outputs": [
+        "artifacts/ops/triage.signal.json"
+      ],
+      "requires_human_approval": false
+    },
+    {
+      "step_id": "step-propose-remediation",
+      "name": "Propose remediation",
+      "purpose": "Draft remediation plan for review.",
+      "action": "draft.remediation.plan",
+      "inputs": [
+        "artifacts/ops/triage.signal.json"
+      ],
+      "outputs": [
+        "artifacts/ops/triage.plan.json"
+      ],
+      "requires_human_approval": true
+    }
+  ]
+}

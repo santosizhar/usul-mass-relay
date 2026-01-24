@@ -13,11 +13,19 @@ required_files=(
   docs/track-b/sprint-b1-b2.md
   docs/track-b/sprint-b3-b4.md
   docs/track-b/sprint-b5.md
+  docs/track-c/sprint-c1-c2.md
+  docs/track-c/sprint-c3-c4.md
+  docs/track-c/sprint-c5.md
   artifacts/README.md
   artifacts/examples/run.sample.json
   artifacts/examples/run.export.sample.jsonl
   artifacts/examples/run.events.sample.json
   artifacts/examples/run.summary.sample.json
+  artifacts/examples/agent-playbook.sample.json
+  artifacts/examples/governance.policy.sample.json
+  artifacts/examples/hitl.request.sample.json
+  artifacts/examples/audit.log.sample.json
+  artifacts/examples/governance.registry.sample.json
   artifacts/runs/01J8Y3H9ZV3EN8R1B0C1R2D3E4/run.json
   packages/run-model/src/run.ts
   packages/run-model/src/run.schema.json
@@ -26,9 +34,26 @@ required_files=(
   packages/run-instrumentation/README.md
   packages/run-instrumentation/src/run-events.ts
   packages/run-instrumentation/src/run-instrumentation.ts
+  packages/agent-playbook/README.md
+  packages/agent-playbook/src/agent-playbook.ts
+  packages/agent-playbook/src/agent-playbook.schema.json
+  packages/governance-policy/README.md
+  packages/governance-policy/src/governance-policy.ts
+  packages/governance-policy/src/governance-policy.schema.json
+  packages/hitl-audit/README.md
+  packages/hitl-audit/src/hitl.ts
+  packages/hitl-audit/src/hitl-request.schema.json
+  packages/hitl-audit/src/audit-log.schema.json
+  packages/governance-registry/README.md
+  packages/governance-registry/src/registry.ts
+  packages/governance-registry/src/registry.schema.json
   projects/ops-automation-studio/README.md
   scripts/check_run_artifacts.js
   scripts/check_run_instrumentation.js
+  scripts/check_agent_playbook.js
+  scripts/check_governance_policy.js
+  scripts/check_hitl_audit.js
+  scripts/check_governance_registry.js
   apps/control-room-runs/README.md
   apps/control-room-runs/config/run-table.json
 )
