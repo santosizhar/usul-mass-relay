@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ReferenceToolCatalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "catalog_id",
+    "name",
+    "version",
+    "owner",
+    "created_at",
+    "updated_at",
+    "tools"
+  ],
+  "properties": {
+    "catalog_id": {
+      "type": "string",
+      "pattern": "^[0-9A-Z]{26}$|^[0-9a-fA-F-]{36}$"
+    },
+    "name": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "minLength": 1 },
+    "owner": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "tools": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/tool" }
+    }
+  },
+  "$defs": {
+    "tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tool_id",
+        "name",
+        "description",
+        "version",
+        "execution_lane",
+        "entrypoint",
+        "request_example",
+        "response_example"
+      ],
+      "properties": {
+        "tool_id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 },
+        "execution_lane": { "type": "string", "enum": ["python"] },
+        "entrypoint": { "type": "string", "minLength": 1 },
+        "request_example": { "type": "object", "additionalProperties": true },
+        "response_example": { "type": "object", "additionalProperties": true }
+      }
+    }
+  }
+}

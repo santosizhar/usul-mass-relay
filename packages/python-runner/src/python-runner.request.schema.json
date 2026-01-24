@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PythonRunnerRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "run_id",
+    "tool_id",
+    "tool_version",
+    "requested_at",
+    "caller",
+    "input",
+    "governance",
+    "trace",
+    "timeout_seconds"
+  ],
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "pattern": "^[0-9A-Z]{26}$|^[0-9a-fA-F-]{36}$"
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[0-9A-Z]{26}$|^[0-9a-fA-F-]{36}$"
+    },
+    "tool_id": { "type": "string", "minLength": 1 },
+    "tool_version": { "type": "string", "minLength": 1 },
+    "requested_at": { "type": "string", "format": "date-time" },
+    "caller": { "type": "string", "minLength": 1 },
+    "input": { "type": "object", "additionalProperties": true },
+    "governance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "requires_hitl", "requires_run_logging"],
+      "properties": {
+        "level": { "type": "string", "enum": ["A0", "A1", "A2", "A3"] },
+        "requires_hitl": { "type": "boolean" },
+        "requires_run_logging": { "type": "boolean" }
+      }
+    },
+    "trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trace_id", "span_id"],
+      "properties": {
+        "trace_id": { "type": "string", "minLength": 1 },
+        "span_id": { "type": "string", "minLength": 1 }
+      }
+    },
+    "timeout_seconds": { "type": "number", "minimum": 1 }
+  }
+}

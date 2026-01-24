@@ -34,6 +34,16 @@ coverage includes:
 - **B4 — Control Room runs UI**: read-only UI specification and configuration.
 - **B5 — Review**: consolidated review of Track B artifacts and gaps.
 
+## Track D scope
+
+Track D establishes the governed execution lane contracts. The current sprint coverage includes:
+
+- **D1 — Tool manifest & contract**: schema-backed definitions for governed tools.
+- **D2 — Python runner**: request/response contracts and a reference runner stub.
+- **D3 — Sandboxing & safety**: sandbox policy contracts for governed execution lanes.
+- **D4 — Reference tools**: reference tool catalog and deterministic stubs.
+- **D5 — Review**: consolidated review of Track D artifacts and gaps.
+
 ## Guardrails
 
 - Prompt Pack refers only to MP1/MP2/MP3 artifacts.

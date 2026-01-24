@@ -16,6 +16,9 @@ required_files=(
   docs/track-c/sprint-c1-c2.md
   docs/track-c/sprint-c3-c4.md
   docs/track-c/sprint-c5.md
+  docs/track-d/sprint-d1-d2.md
+  docs/track-d/sprint-d3-d4.md
+  docs/track-d/sprint-d5.md
   artifacts/README.md
   artifacts/examples/run.sample.json
   artifacts/examples/run.export.sample.jsonl
@@ -26,6 +29,11 @@ required_files=(
   artifacts/examples/hitl.request.sample.json
   artifacts/examples/audit.log.sample.json
   artifacts/examples/governance.registry.sample.json
+  artifacts/examples/tool.manifest.sample.json
+  artifacts/examples/python.runner.request.sample.json
+  artifacts/examples/python.runner.response.sample.json
+  artifacts/examples/execution.sandbox.sample.json
+  artifacts/examples/reference.tools.sample.json
   artifacts/runs/01J8Y3H9ZV3EN8R1B0C1R2D3E4/run.json
   packages/run-model/src/run.ts
   packages/run-model/src/run.schema.json
@@ -47,6 +55,22 @@ required_files=(
   packages/governance-registry/README.md
   packages/governance-registry/src/registry.ts
   packages/governance-registry/src/registry.schema.json
+  packages/tool-manifest/README.md
+  packages/tool-manifest/src/tool-manifest.ts
+  packages/tool-manifest/src/tool-manifest.schema.json
+  packages/python-runner/README.md
+  packages/python-runner/src/python-runner.ts
+  packages/python-runner/src/python-runner.request.schema.json
+  packages/python-runner/src/python-runner.response.schema.json
+  packages/python-runner/src/runner.py
+  packages/execution-sandbox/README.md
+  packages/execution-sandbox/src/execution-sandbox.ts
+  packages/execution-sandbox/src/execution-sandbox.schema.json
+  packages/reference-tools/README.md
+  packages/reference-tools/src/reference-tools.ts
+  packages/reference-tools/src/reference-tools.schema.json
+  packages/reference-tools/src/tools/fetch_object_storage.py
+  packages/reference-tools/src/tools/record_run_summary.py
   projects/ops-automation-studio/README.md
   scripts/check_run_artifacts.js
   scripts/check_run_instrumentation.js
@@ -54,6 +78,10 @@ required_files=(
   scripts/check_governance_policy.js
   scripts/check_hitl_audit.js
   scripts/check_governance_registry.js
+  scripts/check_tool_manifest.js
+  scripts/check_python_runner.js
+  scripts/check_execution_sandbox.js
+  scripts/check_reference_tools.js
   apps/control-room-runs/README.md
   apps/control-room-runs/config/run-table.json
 )
