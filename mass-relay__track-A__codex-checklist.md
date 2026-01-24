@@ -1,8 +1,9 @@
 # Mass Relay — Track A — Codex Checklist
 
+
 ## Codex Intro Prompt (MANDATORY)
 
-Repo: **mass-relay**
+Repo: mass-relay
 
 Read first:
 - MP1__mass-relay__chat1-masterprompt.md
@@ -15,21 +16,38 @@ Hard locks:
 - Runtime units = Agent Playbooks
 - Foundation ≠ Projects (no cross-imports)
 - Control plane = TypeScript
-- Python = governed execution lane
+- Python = governed execution lane only
 - Control Room = read-only
 - Every operation emits a Run
 
-## A1 — Build
+Track specialization:
+- Repo scaffolding, contracts, and boundary enforcement.
 
-Scope:
-- Implement sprint per roadmap
-- Respect track boundaries
+## Sprint A1 — Repo initialization
+
+Objective:
+- Create a buildable greenfield monorepo matching locked layout.
+
+Codex tasks:
+1. Create apps/, packages/, projects/, docs/, artifacts/ directories.
+2. Scaffold a buildable TypeScript workspace with root configs.
+3. Create empty Control Room Next.js app.
+4. Create empty Foundation packages with index.ts exports.
+
+Constraints:
+- No project logic
+- No Python
 
 Primary paths:
-- See roadmap-defined modules
+- apps/**
+- packages/**
+- docs/**
+- projects/**
+- artifacts/**
 
-Expected artifacts:
-- Code + docs per sprint
+Acceptance criteria:
+- Repo builds
+- Control Room app starts
 
 References:
-- mass-relay__roadmap.md
+- MP1 layout lock

@@ -1,8 +1,9 @@
 # Mass Relay — Track Z — Codex Checklist
 
+
 ## Codex Intro Prompt (MANDATORY)
 
-Repo: **mass-relay**
+Repo: mass-relay
 
 Read first:
 - MP1__mass-relay__chat1-masterprompt.md
@@ -15,21 +16,34 @@ Hard locks:
 - Runtime units = Agent Playbooks
 - Foundation ≠ Projects (no cross-imports)
 - Control plane = TypeScript
-- Python = governed execution lane
+- Python = governed execution lane only
 - Control Room = read-only
 - Every operation emits a Run
 
-## Z1 — Build
+Track specialization:
+- Final cleanup and hygiene.
 
-Scope:
-- Implement sprint per roadmap
-- Respect track boundaries
+## Sprint Z1 — Finalization
+
+Objective:
+- Ensure repo consistency and readiness.
+
+Codex tasks:
+1. Audit naming and docs links.
+2. Ensure review docs exist.
+3. Verify build/test from clean checkout.
+
+Constraints:
+- No new features
 
 Primary paths:
-- See roadmap-defined modules
+- docs/**
+- packages/**
+- apps/**
 
-Expected artifacts:
-- Code + docs per sprint
+Acceptance criteria:
+- Build passes
+- Docs consistent
 
 References:
-- mass-relay__roadmap.md
+- All prior tracks

@@ -1,8 +1,9 @@
 # Mass Relay — Track G — Codex Checklist
 
+
 ## Codex Intro Prompt (MANDATORY)
 
-Repo: **mass-relay**
+Repo: mass-relay
 
 Read first:
 - MP1__mass-relay__chat1-masterprompt.md
@@ -15,21 +16,31 @@ Hard locks:
 - Runtime units = Agent Playbooks
 - Foundation ≠ Projects (no cross-imports)
 - Control plane = TypeScript
-- Python = governed execution lane
+- Python = governed execution lane only
 - Control Room = read-only
 - Every operation emits a Run
 
-## G1 — Build
+Track specialization:
+- Testing and regression baseline.
 
-Scope:
-- Implement sprint per roadmap
-- Respect track boundaries
+## Sprint G1 — Schema tests
+
+Objective:
+- Validate all schemas via automated tests.
+
+Codex tasks:
+1. Add schema test harness.
+2. Test run, playbook, and tool schemas.
+
+Constraints:
+- No new schemas
 
 Primary paths:
-- See roadmap-defined modules
+- packages/foundation-testing/**
 
-Expected artifacts:
-- Code + docs per sprint
+Acceptance criteria:
+- Tests pass
+- Clear failures
 
 References:
-- mass-relay__roadmap.md
+- Tracks B/C/D schemas

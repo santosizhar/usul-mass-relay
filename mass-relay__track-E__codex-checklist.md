@@ -1,8 +1,9 @@
 # Mass Relay — Track E — Codex Checklist
 
+
 ## Codex Intro Prompt (MANDATORY)
 
-Repo: **mass-relay**
+Repo: mass-relay
 
 Read first:
 - MP1__mass-relay__chat1-masterprompt.md
@@ -15,21 +16,32 @@ Hard locks:
 - Runtime units = Agent Playbooks
 - Foundation ≠ Projects (no cross-imports)
 - Control plane = TypeScript
-- Python = governed execution lane
+- Python = governed execution lane only
 - Control Room = read-only
 - Every operation emits a Run
 
-## E1 — Build
+Track specialization:
+- Storage interfaces and local persistence.
 
-Scope:
-- Implement sprint per roadmap
-- Respect track boundaries
+## Sprint E1 — Storage interfaces
+
+Objective:
+- Define storage abstractions without concrete providers.
+
+Codex tasks:
+1. Define RunStore, PlaybookStore, ProjectConfigStore interfaces.
+2. Document intended persistence model.
+
+Constraints:
+- No DB connections
 
 Primary paths:
-- See roadmap-defined modules
+- packages/foundation-storage/**
+- docs/contracts/**
 
-Expected artifacts:
-- Code + docs per sprint
+Acceptance criteria:
+- Interfaces compile
+- Docs exist
 
 References:
-- mass-relay__roadmap.md
+- MP3 tech posture

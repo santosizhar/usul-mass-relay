@@ -1,8 +1,9 @@
 # Mass Relay — Track B — Codex Checklist
 
+
 ## Codex Intro Prompt (MANDATORY)
 
-Repo: **mass-relay**
+Repo: mass-relay
 
 Read first:
 - MP1__mass-relay__chat1-masterprompt.md
@@ -15,88 +16,69 @@ Hard locks:
 - Runtime units = Agent Playbooks
 - Foundation ≠ Projects (no cross-imports)
 - Control plane = TypeScript
-- Python = governed execution lane
+- Python = governed execution lane only
 - Control Room = read-only
 - Every operation emits a Run
 
-## B1 — Run model & schemas
+Track specialization:
+- Run-centric observability (models, persistence, helpers, UI surfacing).
 
-Scope:
-- Define Run, Span, Event, IO, Cost, Quality core types
-- Define Run Envelope v1 JSON schema
+## Sprint B1 — Run model & schemas
 
-Primary paths:
-- packages/foundation-observability/src/run/
-- packages/foundation-observability/src/schema/
+Objective:
+- Establish the canonical Run Envelope v1 data model and validator.
 
-Expected artifacts:
-- TypeScript types
-- JSON schema v1
+Codex tasks:
+1. Define TypeScript types for RunEnvelopeV1, including header, spans, events, IO, cost, and quality.
+2. Define a stable RunId format and helper generator.
+3. Create a JSON Schema v1 that mirrors the TS types exactly.
+4. Implement a validator that returns structured, human-readable errors.
+5. Add unit tests validating one correct and one incorrect run envelope.
 
-References:
-- Run principles: MP3
-
-## B2 — Run persistence & exporter
-
-Scope:
-- Persist runs to artifacts/runs/<RUN_ID>/run.json
-- Maintain append-only run index
+Constraints:
+- No persistence or exporters in this sprint
+- No UI changes
 
 Primary paths:
-- packages/foundation-observability/src/export/
-- artifacts/runs/
+- packages/foundation-observability/src/run/**
+- packages/foundation-observability/src/schema/**
+- packages/foundation-observability/test/**
 
-Expected artifacts:
-- run.json per run
-- index.jsonl
+Acceptance criteria:
+- Valid run envelope passes validation
+- Invalid envelope fails with clear error messages
+- All types compile and are exported
 
 References:
-- Run envelope spec
+- docs/contracts/run-envelope-v1.md
+- MP3 observability posture
 
-## B3 — Instrumentation helpers
+## Sprint B2 — Run persistence & exporter
 
-Scope:
-- startRun / startSpan / endSpan helpers
-- Deterministic IDs for regression
+Objective:
+- Persist Run envelopes deterministically to local artifacts for inspection and UI use.
+
+Codex tasks:
+1. Implement a file exporter that writes artifacts/runs/<RUN_ID>/run.json for each completed run.
+2. Ensure exporter is idempotent for the same RUN_ID.
+3. Create an append-only index.jsonl with runId, timestamps, status, project.
+4. Implement a reader that lists runs using only the index.
+5. Add tests creating multiple runs and verifying file structure and index contents.
+
+Constraints:
+- No database usage
+- No UI work
+- Local filesystem only
 
 Primary paths:
-- packages/foundation-observability/src/api/
+- packages/foundation-observability/src/export/**
+- packages/foundation-observability/src/index/**
+- artifacts/runs/**
 
-Expected artifacts:
-- Helper APIs
-- Basic tests
-
-References:
-- OTel-style guidance (conceptual)
-
-## B4 — Control Room runs UI
-
-Scope:
-- Read-only runs list
-- Run detail view
-
-Primary paths:
-- apps/control-room/app/
-
-Expected artifacts:
-- Runs UI pages
+Acceptance criteria:
+- Each run produces one run.json under its own folder
+- index.jsonl lists all runs deterministically
+- Exporter tests pass
 
 References:
-- Control Room posture: MP3
-
-## B5 — Review
-
-Scope:
-- Validate trace consistency
-- Add sample runs
-
-Primary paths:
-- docs/reviews/
-- packages/foundation-observability/fixtures/
-
-Expected artifacts:
-- Review doc
-- Sample runs
-
-References:
-- Roadmap
+- B1 Run Envelope schema

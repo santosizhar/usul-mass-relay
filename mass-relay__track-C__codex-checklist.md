@@ -1,8 +1,9 @@
 # Mass Relay — Track C — Codex Checklist
 
+
 ## Codex Intro Prompt (MANDATORY)
 
-Repo: **mass-relay**
+Repo: mass-relay
 
 Read first:
 - MP1__mass-relay__chat1-masterprompt.md
@@ -15,21 +16,34 @@ Hard locks:
 - Runtime units = Agent Playbooks
 - Foundation ≠ Projects (no cross-imports)
 - Control plane = TypeScript
-- Python = governed execution lane
+- Python = governed execution lane only
 - Control Room = read-only
 - Every operation emits a Run
 
-## C1 — Build
+Track specialization:
+- Governance, policies, HITL, playbook registry.
 
-Scope:
-- Implement sprint per roadmap
-- Respect track boundaries
+## Sprint C1 — Playbook schema
+
+Objective:
+- Define and validate Agent Playbook JSON schema v1.
+
+Codex tasks:
+1. Define playbook schema fields (id, version, steps, tools).
+2. Implement schema validator.
+3. Add example playbooks in ops-automation project.
+4. Add tests for valid/invalid playbooks.
+
+Constraints:
+- No execution
 
 Primary paths:
-- See roadmap-defined modules
+- packages/foundation-governance/**
+- projects/ops-automation-studio/playbooks/**
 
-Expected artifacts:
-- Code + docs per sprint
+Acceptance criteria:
+- Playbooks validate
+- Tests pass
 
 References:
-- mass-relay__roadmap.md
+- MP1 terminology lock
