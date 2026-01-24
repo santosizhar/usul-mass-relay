@@ -1,0 +1,20 @@
+{
+  "request_id": "hitl-req-001",
+  "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E4",
+  "playbook_id": "playbook-ops-triage",
+  "step_id": "step-propose-remediation",
+  "requested_at": "2024-02-01T00:00:00Z",
+  "requester": "control-plane.ops-triage",
+  "status": "approved",
+  "summary": "Approve remediation plan before execution.",
+  "context_refs": [
+    "artifacts/ops/triage.plan.json",
+    "artifacts/ops/triage.signal.json"
+  ],
+  "decision": {
+    "decided_by": "human.reviewer",
+    "decided_at": "2024-02-01T00:05:00Z",
+    "decision": "approved",
+    "reason": "Plan aligns with incident response protocol."
+  }
+}

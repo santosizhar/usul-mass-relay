@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "HITL Request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "request_id",
+    "run_id",
+    "playbook_id",
+    "step_id",
+    "requested_at",
+    "requester",
+    "status",
+    "summary",
+    "context_refs"
+  ],
+  "properties": {
+    "request_id": { "type": "string", "minLength": 1 },
+    "run_id": { "type": "string", "minLength": 1 },
+    "playbook_id": { "type": "string", "minLength": 1 },
+    "step_id": { "type": "string", "minLength": 1 },
+    "requested_at": { "type": "string", "format": "date-time" },
+    "requester": { "type": "string", "minLength": 1 },
+    "status": {
+      "type": "string",
+      "enum": ["pending", "approved", "rejected", "expired"]
+    },
+    "summary": { "type": "string", "minLength": 1 },
+    "context_refs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["decided_by", "decided_at", "decision", "reason"],
+      "properties": {
+        "decided_by": { "type": "string", "minLength": 1 },
+        "decided_at": { "type": "string", "format": "date-time" },
+        "decision": { "type": "string", "enum": ["approved", "rejected"] },
+        "reason": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

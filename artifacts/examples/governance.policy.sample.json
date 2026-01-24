@@ -1,0 +1,79 @@
+{
+  "policy_id": "gov-policy-core",
+  "name": "Core governance ladder",
+  "version": "1.0.0",
+  "owner": "foundation.governance",
+  "created_at": "2024-01-01T00:00:00Z",
+  "updated_at": "2024-01-15T00:00:00Z",
+  "levels": [
+    {
+      "level": "A0",
+      "name": "Read-only insight",
+      "description": "Observation-only actions with no external side effects.",
+      "allowed_actions": [
+        "read",
+        "summarize"
+      ],
+      "requires_human_review": false,
+      "requires_run_logging": true,
+      "restricted_data": []
+    },
+    {
+      "level": "A1",
+      "name": "Draft recommendations",
+      "description": "Drafts recommendations without executing changes.",
+      "allowed_actions": [
+        "read",
+        "summarize",
+        "draft"
+      ],
+      "requires_human_review": true,
+      "requires_run_logging": true,
+      "restricted_data": [
+        "credentials"
+      ]
+    },
+    {
+      "level": "A2",
+      "name": "Proposed changes",
+      "description": "Produces change plans that must be approved before execution.",
+      "allowed_actions": [
+        "read",
+        "summarize",
+        "draft",
+        "propose"
+      ],
+      "requires_human_review": true,
+      "requires_run_logging": true,
+      "restricted_data": [
+        "credentials",
+        "pii"
+      ]
+    },
+    {
+      "level": "A3",
+      "name": "Governed execution",
+      "description": "Executes approved actions with strict logging and audit trails.",
+      "allowed_actions": [
+        "read",
+        "summarize",
+        "draft",
+        "propose",
+        "execute"
+      ],
+      "requires_human_review": true,
+      "requires_run_logging": true,
+      "restricted_data": [
+        "credentials",
+        "pii",
+        "financial"
+      ]
+    }
+  ],
+  "escalation_path": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+  ]
+}
