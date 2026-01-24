@@ -1,0 +1,14 @@
+{
+  "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E4",
+  "stored_at": "2025-01-15T12:05:00Z",
+  "format": "json",
+  "version": "v1",
+  "storage": {
+    "provider_id": "store-001",
+    "namespace_id": "ns-runs",
+    "object_path": "runs/01J8Y3H9ZV3EN8R1B0C1R2D3E4/run.json",
+    "checksum": "sha256:4b1df2d3c8f4f6c2a7d6e4a0b0efb8c9b2c1e0a7a6f4a9b8c7d6e5f4a3b2c1d0",
+    "size_bytes": 512,
+    "content_type": "application/json"
+  }
+}

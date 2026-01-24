@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Run Persistence Record",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["run_id", "stored_at", "format", "version", "storage"],
+  "properties": {
+    "run_id": { "type": "string", "minLength": 1 },
+    "stored_at": { "type": "string", "format": "date-time" },
+    "format": { "type": "string", "enum": ["json"] },
+    "version": { "type": "string", "minLength": 1 },
+    "storage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider_id",
+        "namespace_id",
+        "object_path",
+        "checksum",
+        "size_bytes",
+        "content_type"
+      ],
+      "properties": {
+        "provider_id": { "type": "string", "minLength": 1 },
+        "namespace_id": { "type": "string", "minLength": 1 },
+        "object_path": { "type": "string", "minLength": 1 },
+        "checksum": { "type": "string", "minLength": 1 },
+        "size_bytes": { "type": "number" },
+        "content_type": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

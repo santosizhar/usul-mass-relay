@@ -1,0 +1,116 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Storage Catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["provider", "namespaces", "objects"],
+  "properties": {
+    "provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider_id",
+        "name",
+        "type",
+        "owner",
+        "region",
+        "base_uri",
+        "status",
+        "created_at",
+        "updated_at",
+        "capabilities"
+      ],
+      "properties": {
+        "provider_id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "type": {
+          "type": "string",
+          "enum": ["object-store", "kv-store", "filesystem"]
+        },
+        "owner": { "type": "string", "minLength": 1 },
+        "region": { "type": "string", "minLength": 1 },
+        "base_uri": { "type": "string", "minLength": 1 },
+        "status": { "type": "string", "enum": ["active", "deprecated"] },
+        "created_at": { "type": "string", "format": "date-time" },
+        "updated_at": { "type": "string", "format": "date-time" },
+        "capabilities": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "supports_versioning",
+            "supports_encryption",
+            "max_object_bytes",
+            "max_retention_days"
+          ],
+          "properties": {
+            "supports_versioning": { "type": "boolean" },
+            "supports_encryption": { "type": "boolean" },
+            "max_object_bytes": { "type": "number" },
+            "max_retention_days": { "type": "number" }
+          }
+        }
+      }
+    },
+    "namespaces": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "namespace_id",
+          "provider_id",
+          "name",
+          "purpose",
+          "default_prefix",
+          "retention_days",
+          "encryption",
+          "created_at",
+          "updated_at"
+        ],
+        "properties": {
+          "namespace_id": { "type": "string", "minLength": 1 },
+          "provider_id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "purpose": { "type": "string", "minLength": 1 },
+          "default_prefix": { "type": "string", "minLength": 1 },
+          "retention_days": { "type": "number" },
+          "encryption": { "type": "string", "enum": ["none", "at-rest", "in-transit"] },
+          "created_at": { "type": "string", "format": "date-time" },
+          "updated_at": { "type": "string", "format": "date-time" }
+        }
+      }
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "object_id",
+          "namespace_id",
+          "path",
+          "checksum",
+          "size_bytes",
+          "content_type",
+          "created_at",
+          "run_id",
+          "tags"
+        ],
+        "properties": {
+          "object_id": { "type": "string", "minLength": 1 },
+          "namespace_id": { "type": "string", "minLength": 1 },
+          "path": { "type": "string", "minLength": 1 },
+          "checksum": { "type": "string", "minLength": 1 },
+          "size_bytes": { "type": "number" },
+          "content_type": { "type": "string", "minLength": 1 },
+          "created_at": { "type": "string", "format": "date-time" },
+          "run_id": { "type": "string", "minLength": 1 },
+          "tags": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

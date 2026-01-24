@@ -44,6 +44,16 @@ Track D establishes the governed execution lane contracts. The current sprint co
 - **D4 — Reference tools**: reference tool catalog and deterministic stubs.
 - **D5 — Review**: consolidated review of Track D artifacts and gaps.
 
+## Track E scope
+
+Track E defines storage and state interfaces. The current sprint coverage includes:
+
+- **E1 — Storage interfaces**: schema-backed storage metadata and samples.
+- **E2 — Run persistence**: run storage metadata and deterministic samples.
+- **E3 — Playbook persistence**: playbook storage metadata and deterministic samples.
+- **E4 — Project config persistence**: project config storage metadata and deterministic samples.
+- **E5 — Review**: Track E review of storage and persistence artifacts.
+
 ## Guardrails
 
 - Prompt Pack refers only to MP1/MP2/MP3 artifacts.
