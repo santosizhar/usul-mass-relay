@@ -20,6 +20,12 @@ must emit a Run record.
 - `status`: `success`, `failure`, or `partial`.
 - `trace`: Observability metadata (trace/span IDs).
 
+## Run schema
+
+The canonical Run JSON schema lives at `packages/run-model/src/run.schema.json`. All persisted
+Run records must validate against this schema and the corresponding TypeScript interface in
+`packages/run-model/src/run.ts`.
+
 ## Artifact layout
 
 Artifacts live under `artifacts/` and are immutable once written. A future registry will index
@@ -34,8 +40,13 @@ artifacts/
       run.json
       outputs/
       logs/
+  exports/
+    runs.jsonl
   examples/
     run.sample.json
+    run.export.sample.jsonl
+    run.events.sample.json
+    run.summary.sample.json
 ```
 
 ## Versioning rules

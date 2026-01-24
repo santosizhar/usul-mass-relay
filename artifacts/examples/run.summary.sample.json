@@ -1,0 +1,9 @@
+{
+  "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E4",
+  "timestamp": "2024-01-01T00:00:00Z",
+  "source": "control-plane",
+  "actor": "system.seed",
+  "purpose": "Example Run record for documentation",
+  "status": "success",
+  "trace_id": "trace-example-0001"
+}
