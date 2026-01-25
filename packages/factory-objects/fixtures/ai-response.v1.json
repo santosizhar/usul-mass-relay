@@ -1,0 +1,17 @@
+{
+  "object_type": "ai_response",
+  "schema_version": "1.0.0",
+  "ai_response_id": "01HZXYB30A3H8D1E3X6Y5J0P2R",
+  "ai_request_id": "01HZXY9J72Q3E1C1H8Y3D6W2KP",
+  "model": "gpt-4.1-mini",
+  "responded_at": "2025-01-15T12:18:10Z",
+  "output_text": "The latest workflow run is still processing normalization; no critical failures detected.",
+  "usage": {
+    "prompt_tokens": 124,
+    "completion_tokens": 32,
+    "total_tokens": 156
+  },
+  "created_at": "2025-01-15T12:18:10Z",
+  "updated_at": "2025-01-15T12:18:10Z",
+  "metadata": { "response_quality": "draft" }
+}

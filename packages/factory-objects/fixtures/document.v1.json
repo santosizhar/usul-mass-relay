@@ -1,0 +1,14 @@
+{
+  "object_type": "document",
+  "schema_version": "1.0.0",
+  "document_id": "01HZXY4QJ1G5X8R4Y1MZ7T2K3L",
+  "title": "Factory Object Spec",
+  "source": "knowledge-base",
+  "content": "# Factory Object Spec\nThis is a sample document fixture.",
+  "content_type": "text/markdown",
+  "checksum": "sha256:1f4c6f9d8f2c4c9c2a1b0e4e7f1f9a1c",
+  "tags": ["foundation", "schema"],
+  "created_at": "2025-01-15T12:00:00Z",
+  "updated_at": "2025-01-15T12:00:00Z",
+  "metadata": { "owner": "foundation-team" }
+}
