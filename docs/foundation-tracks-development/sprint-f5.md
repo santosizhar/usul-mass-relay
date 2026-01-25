@@ -19,7 +19,7 @@ validates contract alignment, and lists outstanding gaps.
   `apps/control-room-runs/app/data/playbooks.json`).
 - UI configuration checks (`scripts/check_control_room_runs_ui.js`,
   `scripts/check_control_room_playbooks_ui.js`).
-- Sprint summaries (`docs/track-f/sprint-f1-f2.md`, `docs/track-f/sprint-f3-f4.md`).
+- Sprint summaries (`docs/foundation-tracks-development/sprint-f1-f2.md`, `docs/foundation-tracks-development/sprint-f3-f4.md`).
 
 ## Alignment checks
 

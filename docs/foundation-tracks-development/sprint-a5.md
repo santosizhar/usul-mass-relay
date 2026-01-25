@@ -11,7 +11,7 @@ validates contract alignment, and lists outstanding gaps.
 - Run & artifact conventions (`docs/run-artifact-conventions.md`).
 - Artifact storage examples (`artifacts/README.md`, `artifacts/examples/run.sample.json`).
 - Ops Automation Studio scaffold (`projects/ops-automation-studio/`).
-- Track A sprint summaries (`docs/track-a/sprint-a1-a2.md`, `docs/track-a/sprint-a3-a4.md`).
+- Track A sprint summaries (`docs/foundation-tracks-development/sprint-a1-a2.md`, `docs/foundation-tracks-development/sprint-a3-a4.md`).
 
 ## Alignment checks
 

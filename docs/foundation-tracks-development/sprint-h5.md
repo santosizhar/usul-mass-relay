@@ -18,7 +18,7 @@ validates contract alignment, and lists outstanding gaps.
   (`projects/ops-automation-studio/scenarios/demo-scenarios.schema.json`,
   `projects/ops-automation-studio/scenarios/demo-scenarios.json`).
 - Deterministic validation checks (`scripts/check_ops_automation_studio.js`).
-- Track H sprint summaries (`docs/track-h/sprint-h1-h2.md`, `docs/track-h/sprint-h3-h4.md`).
+- Track H sprint summaries (`docs/foundation-tracks-development/sprint-h1-h2.md`, `docs/foundation-tracks-development/sprint-h3-h4.md`).
 
 ## Alignment checks
 
