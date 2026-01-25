@@ -71,8 +71,7 @@
     "actor": "risk.team",
     "purpose": "Policy inspection checkpoint",
     "status": "policy_review",
-    "trace_id": "trace-example-0008"
-    "trace_id": "trace-example-0003",
+    "trace_id": "trace-example-0008",
     "project": "AI Reliability Suite"
   },
   {

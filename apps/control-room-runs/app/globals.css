@@ -439,6 +439,166 @@ select {
   color: #64748b;
 }
 
+.agent-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.agent-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.agent-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.agent-controls {
+  display: grid;
+  gap: 16px;
+}
+
+.agent-chat {
+  min-height: 220px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  padding: 16px;
+  background: #f8fafc;
+}
+
+.chat-thread {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.chat-bubble {
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.chat-user {
+  background: #dbeafe;
+}
+
+.chat-assistant {
+  background: #ecfccb;
+}
+
+.chat-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #475569;
+}
+
+.chat-content {
+  white-space: pre-line;
+}
+
+.draft-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.draft-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  align-items: center;
+}
+
+.draft-title {
+  margin: 0;
+  font-weight: 600;
+}
+
+.draft-meta {
+  margin: 4px 0 10px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.draft-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.doc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.doc-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.doc-title {
+  margin: 0 0 6px;
+  font-weight: 600;
+}
+
+.doc-summary {
+  margin: 0 0 6px;
+  color: #475569;
+  font-size: 13px;
+}
+
+.doc-path {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.doc-meta {
+  display: grid;
+  justify-items: end;
+  gap: 6px;
+  font-size: 12px;
+  color: #475569;
+}
+
+.doc-status {
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
 .module-stack {
   display: grid;
   gap: 20px;
@@ -551,6 +711,10 @@ select {
 
 @media (max-width: 960px) {
   .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .agent-grid {
     grid-template-columns: 1fr;
   }
 
