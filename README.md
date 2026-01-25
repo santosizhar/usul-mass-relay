@@ -120,5 +120,36 @@ file-based references pending future integrations.
 
 ## Limitations
 
-This repository currently provides only structural scaffolding and documentation. No runnable
-services are present yet.
+This repository currently provides mostly structural scaffolding and documentation. A minimal
+Foundation service exists for local experimentation but is not production-ready.
+
+## Local Foundation service (thin vertical slice)
+
+The Foundation service is a minimal runnable control-plane slice that wires identity + policy
+enforcement, a tiny workflow runtime, and Run trace persistence using the existing schema contracts.
+
+### Run locally
+
+```bash
+cd packages/foundation-service
+npm install
+npm run dev
+```
+
+### Execute a workflow
+
+```bash
+curl -X POST http://localhost:4040/foundation/workflows/execute \\
+  -H "content-type: application/json" \\
+  -H "x-actor: ada.lovelace" \\
+  -H "x-role: operator" \\
+  -d '{"workflow_id":"foundation-trace-demo","action":"workflow:execute","inputs":["seed:demo"]}'
+```
+
+### Read a Run
+
+```bash
+curl -X GET http://localhost:4040/foundation/runs/<run_id> \\
+  -H "x-actor: ada.lovelace" \\
+  -H "x-role: observer"
+```
