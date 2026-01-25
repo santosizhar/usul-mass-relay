@@ -3,12 +3,14 @@
     { "key": "run_id", "label": "Run ID" },
     { "key": "timestamp", "label": "Timestamp" },
     { "key": "status", "label": "Status" },
+    { "key": "project", "label": "Project" },
     { "key": "source", "label": "Source" },
     { "key": "actor", "label": "Actor" },
     { "key": "purpose", "label": "Purpose" }
   ],
   "filters": [
     { "key": "status", "label": "Status" },
+    { "key": "project", "label": "Project" },
     { "key": "source", "label": "Source" },
     { "key": "actor", "label": "Actor" },
     { "key": "purpose", "label": "Purpose" }

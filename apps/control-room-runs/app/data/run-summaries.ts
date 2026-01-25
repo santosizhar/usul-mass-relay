@@ -8,6 +8,7 @@ export type RunSummary = {
   purpose: string;
   status: "success" | "running" | "failed" | "canceled";
   trace_id: string;
+  project: string;
 };
 
 export const runSummaries = runSummariesJson as RunSummary[];
