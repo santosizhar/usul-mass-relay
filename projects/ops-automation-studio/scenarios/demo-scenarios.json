@@ -1,0 +1,40 @@
+{
+  "catalog_id": "demo-scenarios-ops-automation",
+  "name": "Ops Automation Studio Demo Scenarios",
+  "version": "1.0.0",
+  "owner": "project.ops-automation-studio",
+  "created_at": "2025-02-10T00:00:00Z",
+  "updated_at": "2025-02-10T00:00:00Z",
+  "scenarios": [
+    {
+      "scenario_id": "scenario-triage-demo",
+      "name": "Intake triage demo",
+      "summary": "Triage a monitoring alert into a governance-reviewed action plan.",
+      "playbooks": ["playbook-ops-triage"],
+      "workflows": ["workflow-ops-triage"],
+      "mock_integrations": ["integration-monitoring-mock", "integration-ticketing-mock"],
+      "expected_runs": [
+        {
+          "run_stage": "triage",
+          "governance_level": "A1",
+          "artifacts": ["triage.summary", "triage.urgency"]
+        }
+      ]
+    },
+    {
+      "scenario_id": "scenario-writeback-demo",
+      "name": "Governed write-back demo",
+      "summary": "Execute an approved change plan with Run logging and audit capture.",
+      "playbooks": ["playbook-ops-writeback"],
+      "workflows": ["workflow-ops-writeback"],
+      "mock_integrations": ["integration-ticketing-mock"],
+      "expected_runs": [
+        {
+          "run_stage": "writeback",
+          "governance_level": "A3",
+          "artifacts": ["writeback.result", "audit.record", "run.id"]
+        }
+      ]
+    }
+  ]
+}

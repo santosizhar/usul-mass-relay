@@ -1,0 +1,63 @@
+{
+  "project_id": "project-ops-automation-studio",
+  "name": "Ops Automation Studio",
+  "version": "1.0.0",
+  "owner": "project.ops-automation-studio",
+  "created_at": "2025-02-10T00:00:00Z",
+  "updated_at": "2025-02-10T00:00:00Z",
+  "governance_policy_id": "gov-policy-core",
+  "playbooks": [
+    {
+      "playbook_id": "playbook-ops-triage",
+      "path": "projects/ops-automation-studio/playbooks/ops-triage.playbook.json",
+      "lane": "control-plane",
+      "purpose": "Standardize intake triage for operational requests."
+    },
+    {
+      "playbook_id": "playbook-ops-writeback",
+      "path": "projects/ops-automation-studio/playbooks/ops-writeback.playbook.json",
+      "lane": "governed-execution",
+      "purpose": "Apply approved write-backs through governed execution."
+    }
+  ],
+  "workflows": [
+    {
+      "workflow_id": "workflow-ops-triage",
+      "path": "projects/ops-automation-studio/workflows/ops-triage.workflow.md",
+      "description": "Triage incoming automation requests and prepare execution context."
+    },
+    {
+      "workflow_id": "workflow-ops-writeback",
+      "path": "projects/ops-automation-studio/workflows/ops-writeback.workflow.md",
+      "description": "Governed write-back workflow with HITL approval and Run logging."
+    }
+  ],
+  "integrations": [
+    {
+      "integration_id": "integration-ticketing-mock",
+      "path": "projects/ops-automation-studio/integrations/mock-integrations.json",
+      "description": "Mock ticketing connector for demo intake and status updates."
+    },
+    {
+      "integration_id": "integration-monitoring-mock",
+      "path": "projects/ops-automation-studio/integrations/mock-integrations.json",
+      "description": "Mock monitoring connector for incident context and signals."
+    }
+  ],
+  "scenarios": [
+    {
+      "scenario_id": "scenario-triage-demo",
+      "path": "projects/ops-automation-studio/scenarios/demo-scenarios.json",
+      "summary": "Demonstrate intake triage with escalation routing."
+    },
+    {
+      "scenario_id": "scenario-writeback-demo",
+      "path": "projects/ops-automation-studio/scenarios/demo-scenarios.json",
+      "summary": "Demonstrate governed write-back with Run logging."
+    }
+  ],
+  "run_output": {
+    "storage_provider_id": "store-001",
+    "namespace_id": "ns-runs"
+  }
+}
