@@ -1,0 +1,92 @@
+{
+  "catalog_id": "retrieval-catalog-001",
+  "name": "Retrieval Sample Catalog",
+  "updated_at": "2024-01-10T00:00:00Z",
+  "documents": [
+    {
+      "document_id": "doc-ops-runbook",
+      "collection_id": "ops",
+      "title": "Operations Runbook",
+      "uri": "https://example.com/ops/runbook.md",
+      "content_type": "text/markdown",
+      "excerpt": "Runbook guidance for incident response and escalation.",
+      "tags": ["ops", "runbook", "incident"],
+      "checksum": "sha256:9d1a0c8e0f1f9e21",
+      "permissions": {
+        "visibility": "public",
+        "allowed_roles": [],
+        "required_scopes": [],
+        "policy_refs": []
+      },
+      "version": {
+        "version_id": "v2",
+        "version_tag": "2024.01",
+        "created_at": "2023-12-15T00:00:00Z",
+        "updated_at": "2024-01-09T12:00:00Z",
+        "source_system": "wiki",
+        "source_version": "2024-01-09"
+      },
+      "freshness": {
+        "valid_from": "2024-01-01T00:00:00Z",
+        "last_reviewed_at": "2024-01-09T12:00:00Z"
+      }
+    },
+    {
+      "document_id": "doc-incident-retro",
+      "collection_id": "ops",
+      "title": "Incident Retrospective - Jan",
+      "uri": "https://example.com/ops/incidents/jan-retro.pdf",
+      "content_type": "application/pdf",
+      "excerpt": "Summary of January incidents and lessons learned.",
+      "tags": ["ops", "postmortem"],
+      "checksum": "sha256:4b7f1a2c9e4d22f3",
+      "permissions": {
+        "visibility": "restricted",
+        "allowed_roles": ["ops-manager"],
+        "required_scopes": ["ops:read"],
+        "policy_refs": ["policy-incident-retro"]
+      },
+      "version": {
+        "version_id": "v1",
+        "version_tag": "2024.01",
+        "created_at": "2024-01-05T00:00:00Z",
+        "updated_at": "2024-01-05T08:00:00Z",
+        "source_system": "drive",
+        "source_version": "2024-01-05"
+      },
+      "freshness": {
+        "valid_from": "2024-01-05T00:00:00Z",
+        "valid_to": "2024-12-31T23:59:59Z",
+        "last_reviewed_at": "2024-01-05T08:00:00Z"
+      }
+    },
+    {
+      "document_id": "doc-forecast",
+      "collection_id": "strategy",
+      "title": "Capacity Forecast",
+      "uri": "https://example.com/strategy/capacity-forecast.xlsx",
+      "content_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "excerpt": "Projected capacity requirements for the next two quarters.",
+      "tags": ["strategy", "capacity"],
+      "checksum": "sha256:0f2d9ab3c4e5011d",
+      "permissions": {
+        "visibility": "restricted",
+        "allowed_roles": ["finance", "strategy"],
+        "required_scopes": ["planning:read"],
+        "policy_refs": []
+      },
+      "version": {
+        "version_id": "v3",
+        "version_tag": "2024.02",
+        "created_at": "2024-02-01T00:00:00Z",
+        "updated_at": "2024-02-15T12:00:00Z",
+        "source_system": "planning",
+        "source_version": "2024-02-15"
+      },
+      "freshness": {
+        "valid_from": "2024-02-01T00:00:00Z",
+        "last_reviewed_at": "2024-02-15T12:00:00Z"
+      }
+    }
+  ]
+}

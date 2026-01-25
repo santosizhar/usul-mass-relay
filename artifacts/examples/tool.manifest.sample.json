@@ -48,6 +48,50 @@
         "max_retries": 1
       },
       "policy_refs": ["gov-policy-storage"]
+    },
+    {
+      "tool_id": "tool.write-audit-log",
+      "name": "Write audit log entry",
+      "description": "Append a governed audit record to the compliance ledger.",
+      "version": "2025.01",
+      "execution_lane": "python",
+      "contract": {
+        "request_schema": {
+          "type": "object",
+          "properties": {
+            "run_id": { "type": "string" },
+            "event": { "type": "string" },
+            "severity": { "type": "string" }
+          },
+          "required": ["run_id", "event", "severity"]
+        },
+        "response_schema": {
+          "type": "object",
+          "properties": {
+            "record_id": { "type": "string" },
+            "stored_at": { "type": "string" }
+          },
+          "required": ["record_id", "stored_at"]
+        },
+        "error_schema": {
+          "type": "object",
+          "properties": {
+            "code": { "type": "string" },
+            "message": { "type": "string" }
+          },
+          "required": ["code", "message"]
+        }
+      },
+      "governance": {
+        "level": "A3",
+        "requires_hitl": true,
+        "requires_run_logging": true
+      },
+      "constraints": {
+        "timeout_seconds": 30,
+        "max_retries": 0
+      },
+      "policy_refs": ["01J9Z1B3C4D5E6F7G8H9J0K1L2"]
     }
   ]
 }

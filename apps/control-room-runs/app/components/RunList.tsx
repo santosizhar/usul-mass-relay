@@ -31,6 +31,7 @@ const formatStatusLabel = (status: RunSummary["status"]) => {
 
 type Filters = {
   status: string;
+  project: string;
   source: string;
   actor: string;
   purpose: string;
@@ -38,6 +39,7 @@ type Filters = {
 
 const defaultFilters: Filters = {
   status: "",
+  project: "",
   source: "",
   actor: "",
   purpose: ""
@@ -77,6 +79,7 @@ export const RunList = ({
   const filterOptions = useMemo(() => {
     return {
       status: getUniqueValues(runs, "status"),
+      project: getUniqueValues(runs, "project"),
       source: getUniqueValues(runs, "source"),
       actor: getUniqueValues(runs, "actor"),
       purpose: getUniqueValues(runs, "purpose")
@@ -132,6 +135,7 @@ export const RunList = ({
                   {formatStatusLabel(run.status)}
                 </span>
               </td>
+              <td>{run.project}</td>
               <td>{run.source}</td>
               <td>{run.actor}</td>
               <td>{run.purpose}</td>

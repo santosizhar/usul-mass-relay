@@ -1,0 +1,4 @@
+{"event_id":"evt-baseline-0001","run_id":"01J8Y3H9ZV3EN8R1B0C1R2D3E5","timestamp":"2024-01-02T00:00:00Z","category":"workflow","action":"evaluate.regression","status":"start","message":"Baseline regression evaluation started."}
+{"event_id":"evt-baseline-0002","run_id":"01J8Y3H9ZV3EN8R1B0C1R2D3E5","timestamp":"2024-01-02T00:00:10Z","category":"agent","action":"summarize.expectations","status":"success","message":"Loaded baseline dataset expectations."}
+{"event_id":"evt-baseline-0003","run_id":"01J8Y3H9ZV3EN8R1B0C1R2D3E5","timestamp":"2024-01-02T00:00:20Z","category":"agent","action":"compare.outputs","status":"success","message":"Compared observed trace counts to expectations."}
+{"event_id":"evt-baseline-0004","run_id":"01J8Y3H9ZV3EN8R1B0C1R2D3E5","timestamp":"2024-01-02T00:00:30Z","category":"tool","action":"write.report","status":"success","message":"Wrote evaluation gate report artifact."}

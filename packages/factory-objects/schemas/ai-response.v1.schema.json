@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AIResponse",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "object_type",
+    "schema_version",
+    "ai_response_id",
+    "ai_request_id",
+    "model",
+    "responded_at",
+    "output_text",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "object_type": { "type": "string", "enum": ["ai_response"] },
+    "schema_version": { "type": "string", "enum": ["1.0.0"] },
+    "ai_response_id": {
+      "type": "string",
+      "pattern": "^[0-9A-Z]{26}$|^[0-9a-fA-F-]{36}$"
+    },
+    "ai_request_id": {
+      "type": "string",
+      "pattern": "^[0-9A-Z]{26}$|^[0-9a-fA-F-]{36}$"
+    },
+    "model": { "type": "string", "minLength": 1 },
+    "responded_at": { "type": "string", "format": "date-time" },
+    "output_text": { "type": "string", "minLength": 1 },
+    "tool_calls": { "type": "array", "items": { "type": "object", "additionalProperties": true } },
+    "usage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["prompt_tokens", "completion_tokens", "total_tokens"],
+      "properties": {
+        "prompt_tokens": { "type": "number" },
+        "completion_tokens": { "type": "number" },
+        "total_tokens": { "type": "number" }
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "metadata": { "type": "object", "additionalProperties": true }
+  }
+}

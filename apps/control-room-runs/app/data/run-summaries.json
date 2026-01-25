@@ -6,7 +6,8 @@
     "actor": "system.seed",
     "purpose": "Example Run record for documentation",
     "status": "success",
-    "trace_id": "trace-example-0001"
+    "trace_id": "trace-example-0001",
+    "project": "Factory Control Room"
   },
   {
     "run_id": "01J9Z0W8R4F5A6B7C8D9E0F1G2",
@@ -15,7 +16,8 @@
     "actor": "ops.worker",
     "purpose": "Governed tool execution with python runner",
     "status": "running",
-    "trace_id": "trace-example-0002"
+    "trace_id": "trace-example-0002",
+    "project": "Ops Automation Studio"
   },
   {
     "run_id": "01J9Z1X2Y3Z4A5B6C7D8E9F0G1",
@@ -70,5 +72,37 @@
     "purpose": "Policy inspection checkpoint",
     "status": "policy_review",
     "trace_id": "trace-example-0008"
+    "trace_id": "trace-example-0003",
+    "project": "AI Reliability Suite"
+  },
+  {
+    "run_id": "01JA1B2C3D4E5F6G7H8J9K0L1M",
+    "timestamp": "2024-02-14T09:12:31Z",
+    "source": "reporting-factory",
+    "actor": "reporting.orchestrator",
+    "purpose": "Weekly KPI narrative generation",
+    "status": "success",
+    "trace_id": "trace-example-0004",
+    "project": "Reporting Factory"
+  },
+  {
+    "run_id": "01JA2C3D4E5F6G7H8J9K0L1M2N",
+    "timestamp": "2024-02-15T12:43:19Z",
+    "source": "marketing-factory",
+    "actor": "content.publisher",
+    "purpose": "Brand-compliant campaign draft review",
+    "status": "success",
+    "trace_id": "trace-example-0005",
+    "project": "Marketing and Docs Factory"
+  },
+  {
+    "run_id": "01JA3D4E5F6G7H8J9K0L1M2N3P",
+    "timestamp": "2024-02-16T18:02:07Z",
+    "source": "knowledge-layer",
+    "actor": "knowledge.agent",
+    "purpose": "Answer verification with cited evidence",
+    "status": "canceled",
+    "trace_id": "trace-example-0006",
+    "project": "Internal Knowledge Assistant"
   }
 ]

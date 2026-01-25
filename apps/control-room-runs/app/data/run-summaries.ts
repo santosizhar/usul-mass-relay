@@ -15,6 +15,7 @@ export type RunSummary = {
     | "awaiting_exception"
     | "policy_review";
   trace_id: string;
+  project: string;
 };
 
 export const runSummaries = runSummariesJson as RunSummary[];

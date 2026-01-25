@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorkflowRun",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "object_type",
+    "schema_version",
+    "workflow_run_id",
+    "workflow_id",
+    "status",
+    "trigger",
+    "steps",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "object_type": { "type": "string", "enum": ["workflow_run"] },
+    "schema_version": { "type": "string", "enum": ["1.0.0"] },
+    "workflow_run_id": {
+      "type": "string",
+      "pattern": "^[0-9A-Z]{26}$|^[0-9a-fA-F-]{36}$"
+    },
+    "workflow_id": {
+      "type": "string",
+      "pattern": "^[0-9A-Z]{26}$|^[0-9a-fA-F-]{36}$"
+    },
+    "status": { "type": "string", "enum": ["queued", "running", "success", "failure", "canceled"] },
+    "trigger": { "type": "string", "enum": ["event", "schedule", "manual"] },
+    "started_at": { "type": "string", "format": "date-time" },
+    "finished_at": { "type": "string", "format": "date-time" },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["step_id", "name", "status"],
+        "properties": {
+          "step_id": {
+            "type": "string",
+            "pattern": "^[0-9A-Z]{26}$|^[0-9a-fA-F-]{36}$"
+          },
+          "name": { "type": "string", "minLength": 1 },
+          "status": { "type": "string", "enum": ["queued", "running", "success", "failure", "skipped"] },
+          "started_at": { "type": "string", "format": "date-time" },
+          "finished_at": { "type": "string", "format": "date-time" },
+          "output_refs": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "metadata": { "type": "object", "additionalProperties": true }
+  }
+}

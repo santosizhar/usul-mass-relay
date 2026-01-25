@@ -38,6 +38,7 @@ artifacts/
   runs/
     <run_id>/
       run.json
+      trace.jsonl
       outputs/
       logs/
   exports/

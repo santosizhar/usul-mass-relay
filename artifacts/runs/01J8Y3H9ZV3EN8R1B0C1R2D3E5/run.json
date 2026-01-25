@@ -1,0 +1,18 @@
+{
+  "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E5",
+  "timestamp": "2024-01-02T00:00:00Z",
+  "source": "governed-execution",
+  "actor": "system.regression",
+  "purpose": "Baseline regression run for evaluation gates",
+  "inputs": [
+    "artifacts/evaluations/baseline.golden.json"
+  ],
+  "outputs": [
+    "artifacts/exports/evaluation-baseline.report.json"
+  ],
+  "status": "success",
+  "trace": {
+    "trace_id": "trace-baseline-0001",
+    "span_id": "span-baseline-0001"
+  }
+}

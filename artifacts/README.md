@@ -8,6 +8,7 @@ The `artifacts/` directory stores versioned outputs produced by Runs.
 - `examples/`: Sample artifacts used for documentation and validation.
 - `exports/`: Deterministic snapshots of Runs for downstream analysis (including golden snapshots
   used for regression checks).
+- `evaluations/`: Golden evaluation datasets used by gate checks and regression runs.
 
 ## Usage notes
 
