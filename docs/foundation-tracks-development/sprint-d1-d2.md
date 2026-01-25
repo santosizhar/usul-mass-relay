@@ -5,8 +5,8 @@ This document summarizes the Track D deliverables implemented in sprints D1 and 
 ## Sprint D1 — Tool manifest & contract
 
 Artifacts:
-- Tool manifest TypeScript interface in `packages/tool-manifest/src/tool-manifest.ts`.
-- Tool manifest JSON schema in `packages/tool-manifest/src/tool-manifest.schema.json`.
+- Tool manifest TypeScript interface in `packages/execution-contracts/src/tool-manifest.ts`.
+- Tool manifest JSON schema in `packages/execution-contracts/src/tool-manifest.schema.json`.
 - Tool manifest sample in `artifacts/examples/tool.manifest.sample.json`.
 
 Checks:
@@ -15,10 +15,10 @@ Checks:
 ## Sprint D2 — Python runner
 
 Artifacts:
-- Python runner TypeScript interfaces in `packages/python-runner/src/python-runner.ts`.
-- Python runner request/response schemas in `packages/python-runner/src/python-runner.request.schema.json` and
-  `packages/python-runner/src/python-runner.response.schema.json`.
-- Python runner stub in `packages/python-runner/src/runner.py`.
+- Python runner TypeScript interfaces in `packages/execution-contracts/src/python-runner.ts`.
+- Python runner request/response schemas in `packages/execution-contracts/src/python-runner.request.schema.json` and
+  `packages/execution-contracts/src/python-runner.response.schema.json`.
+- Python runner stub in `packages/execution-contracts/src/runner.py`.
 - Python runner request/response samples in `artifacts/examples/python.runner.request.sample.json` and
   `artifacts/examples/python.runner.response.sample.json`.
 

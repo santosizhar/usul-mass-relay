@@ -6,8 +6,16 @@ export type RunSummary = {
   source: string;
   actor: string;
   purpose: string;
-  status: "success" | "running" | "failed" | "canceled";
+  status:
+    | "success"
+    | "running"
+    | "failed"
+    | "canceled"
+    | "awaiting_approval"
+    | "awaiting_exception"
+    | "policy_review";
   trace_id: string;
+  project: string;
 };
 
 export const runSummaries = runSummariesJson as RunSummary[];

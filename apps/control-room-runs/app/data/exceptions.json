@@ -1,0 +1,26 @@
+[
+  {
+    "exception_id": "exc-2001",
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V4",
+    "policy_id": "policy-execution-sandbox",
+    "requested_by": "sandbox.agent",
+    "requested_at": "2024-02-15T11:21:09Z",
+    "severity": "High",
+    "exception_type": "Network egress",
+    "summary": "Requires temporary outbound access to vendor risk scoring endpoint.",
+    "mitigation_plan": "Allowlist vendor domain and timebox credentials to 30 minutes.",
+    "status": "pending"
+  },
+  {
+    "exception_id": "exc-2002",
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V5",
+    "policy_id": "policy-data-privacy",
+    "requested_by": "privacy.bot",
+    "requested_at": "2024-02-15T12:05:41Z",
+    "severity": "Medium",
+    "exception_type": "Data retention",
+    "summary": "Extend retention window for audit trace replay.",
+    "mitigation_plan": "Apply encryption at rest and restrict access to audit team.",
+    "status": "pending"
+  }
+]

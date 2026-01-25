@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FactoryObject",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "object_id",
+    "kind",
+    "name",
+    "source_system",
+    "source_uri",
+    "created_at",
+    "updated_at",
+    "tags",
+    "attributes"
+  ],
+  "properties": {
+    "object_id": {
+      "type": "string",
+      "description": "Stable identifier for the canonical object.",
+      "minLength": 1
+    },
+    "kind": {
+      "type": "string",
+      "enum": ["dataset", "entity", "event", "document", "metric"]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "source_system": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_uri": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "tags": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "attributes": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "lineage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["upstream_object_ids", "downstream_object_ids", "run_id"],
+      "properties": {
+        "upstream_object_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "downstream_object_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "run_id": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

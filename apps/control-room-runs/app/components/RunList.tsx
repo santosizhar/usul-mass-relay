@@ -14,13 +14,24 @@ const statusClassName = (status: RunSummary["status"]) => {
       return "status-pill status-failed";
     case "canceled":
       return "status-pill status-canceled";
+    case "awaiting_approval":
+      return "status-pill status-awaiting";
+    case "awaiting_exception":
+      return "status-pill status-exception";
+    case "policy_review":
+      return "status-pill status-policy";
     default:
       return "status-pill";
   }
 };
 
+const formatStatusLabel = (status: RunSummary["status"]) => {
+  return status.replace(/_/g, " ");
+};
+
 type Filters = {
   status: string;
+  project: string;
   source: string;
   actor: string;
   purpose: string;
@@ -28,6 +39,7 @@ type Filters = {
 
 const defaultFilters: Filters = {
   status: "",
+  project: "",
   source: "",
   actor: "",
   purpose: ""
@@ -67,6 +79,7 @@ export const RunList = ({
   const filterOptions = useMemo(() => {
     return {
       status: getUniqueValues(runs, "status"),
+      project: getUniqueValues(runs, "project"),
       source: getUniqueValues(runs, "source"),
       actor: getUniqueValues(runs, "actor"),
       purpose: getUniqueValues(runs, "purpose")
@@ -118,8 +131,11 @@ export const RunList = ({
               <td>{run.run_id}</td>
               <td>{new Date(run.timestamp).toLocaleString("en-US")}</td>
               <td>
-                <span className={statusClassName(run.status)}>{run.status}</span>
+                <span className={statusClassName(run.status)}>
+                  {formatStatusLabel(run.status)}
+                </span>
               </td>
+              <td>{run.project}</td>
               <td>{run.source}</td>
               <td>{run.actor}</td>
               <td>{run.purpose}</td>

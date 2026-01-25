@@ -7,7 +7,7 @@ const repoRoot = path.resolve(__dirname, "..");
 const schemaPath = path.join(
   repoRoot,
   "packages",
-  "execution-sandbox",
+  "execution-contracts",
   "src",
   "execution-sandbox.schema.json"
 );

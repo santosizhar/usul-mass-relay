@@ -57,43 +57,42 @@ required_files=(
   artifacts/examples/python.runner.response.sample.json
   artifacts/examples/execution.sandbox.sample.json
   artifacts/examples/reference.tools.sample.json
+  artifacts/examples/playbook.persistence.sample.json
+  artifacts/examples/project.config.persistence.sample.json
   artifacts/runs/01J8Y3H9ZV3EN8R1B0C1R2D3E4/run.json
-  packages/run-model/src/run.ts
-  packages/run-model/src/run.schema.json
-  packages/run-persistence/src/run-store.ts
-  packages/run-persistence/src/run-exporter.ts
-  packages/run-instrumentation/README.md
-  packages/run-instrumentation/src/run-events.ts
-  packages/run-instrumentation/src/run-instrumentation.ts
-  packages/agent-playbook/README.md
-  packages/agent-playbook/src/agent-playbook.ts
-  packages/agent-playbook/src/agent-playbook.schema.json
-  packages/governance-policy/README.md
-  packages/governance-policy/src/governance-policy.ts
-  packages/governance-policy/src/governance-policy.schema.json
-  packages/hitl-audit/README.md
-  packages/hitl-audit/src/hitl.ts
-  packages/hitl-audit/src/hitl-request.schema.json
-  packages/hitl-audit/src/audit-log.schema.json
-  packages/governance-registry/README.md
-  packages/governance-registry/src/registry.ts
-  packages/governance-registry/src/registry.schema.json
-  packages/tool-manifest/README.md
-  packages/tool-manifest/src/tool-manifest.ts
-  packages/tool-manifest/src/tool-manifest.schema.json
-  packages/python-runner/README.md
-  packages/python-runner/src/python-runner.ts
-  packages/python-runner/src/python-runner.request.schema.json
-  packages/python-runner/src/python-runner.response.schema.json
-  packages/python-runner/src/runner.py
-  packages/execution-sandbox/README.md
-  packages/execution-sandbox/src/execution-sandbox.ts
-  packages/execution-sandbox/src/execution-sandbox.schema.json
-  packages/reference-tools/README.md
-  packages/reference-tools/src/reference-tools.ts
-  packages/reference-tools/src/reference-tools.schema.json
-  packages/reference-tools/src/tools/fetch_object_storage.py
-  packages/reference-tools/src/tools/record_run_summary.py
+  packages/run/README.md
+  packages/run/src/run.ts
+  packages/run/src/run.schema.json
+  packages/run/src/run-store.ts
+  packages/run/src/run-exporter.ts
+  packages/run/src/run-events.ts
+  packages/run/src/run-instrumentation.ts
+  packages/run/src/run-storage.ts
+  packages/run/src/run-storage.schema.json
+  packages/governance-contracts/README.md
+  packages/governance-contracts/src/agent-playbook.ts
+  packages/governance-contracts/src/agent-playbook.schema.json
+  packages/governance-contracts/src/governance-policy.ts
+  packages/governance-contracts/src/governance-policy.schema.json
+  packages/governance-contracts/src/enforcement.ts
+  packages/governance-contracts/src/hitl.ts
+  packages/governance-contracts/src/hitl-request.schema.json
+  packages/governance-contracts/src/audit-log.schema.json
+  packages/governance-contracts/src/registry.ts
+  packages/governance-contracts/src/registry.schema.json
+  packages/execution-contracts/README.md
+  packages/execution-contracts/src/execution-sandbox.ts
+  packages/execution-contracts/src/execution-sandbox.schema.json
+  packages/execution-contracts/src/tool-manifest.ts
+  packages/execution-contracts/src/tool-manifest.schema.json
+  packages/execution-contracts/src/python-runner.ts
+  packages/execution-contracts/src/python-runner.request.schema.json
+  packages/execution-contracts/src/python-runner.response.schema.json
+  packages/execution-contracts/src/runner.py
+  packages/execution-contracts/src/reference-tools.ts
+  packages/execution-contracts/src/reference-tools.schema.json
+  packages/execution-contracts/src/tools/fetch_object_storage.py
+  packages/execution-contracts/src/tools/record_run_summary.py
   projects/ops-automation-studio/README.md
   scripts/check_run_artifacts.js
   scripts/check_run_instrumentation.js

@@ -8,7 +8,7 @@ terminology for the project.
 
 - `apps/`: UI-only applications (Next.js surfaces).
 - `packages/`: Foundation modules (shared platform capabilities).
-- `projects/`: Reference projects built on top of Foundation modules.
+- `projects/`: Reference projects built on top of Foundation modules (Ops Automation Studio, Internal Knowledge Assistant).
 - `docs/`: Documentation, governance, and terminology.
 - `docs/foundation-tracks-development/`: Track checklists, sprint summaries, and roadmap references.
 - `artifacts/`: Versioned outputs and snapshots produced by Runs.
@@ -108,9 +108,9 @@ Track Z finalizes repository conventions and hygiene. The current sprint coverag
 ## Status
 
 Mass Relay currently provides execution-grade scaffolding and documentation for Foundation contracts,
-governance, the governed execution lane, Control Room UI surfaces, and the Ops Automation Studio
-reference project. Runtime services are not yet wired; artifacts and checks are deterministic,
-file-based references pending future integrations.
+governance, the governed execution lane, Control Room UI surfaces, and reference project scaffolds for
+Ops Automation Studio and the Internal Knowledge Assistant. Runtime services are not yet wired;
+artifacts and checks are deterministic, file-based references pending future integrations.
 
 ## Guardrails
 
@@ -123,5 +123,36 @@ file-based references pending future integrations.
 
 ## Limitations
 
-This repository currently provides only structural scaffolding and documentation. No runnable
-services are present yet.
+This repository currently provides mostly structural scaffolding and documentation. A minimal
+Foundation service exists for local experimentation but is not production-ready.
+
+## Local Foundation service (thin vertical slice)
+
+The Foundation service is a minimal runnable control-plane slice that wires identity + policy
+enforcement, a tiny workflow runtime, and Run trace persistence using the existing schema contracts.
+
+### Run locally
+
+```bash
+cd packages/foundation-service
+npm install
+npm run dev
+```
+
+### Execute a workflow
+
+```bash
+curl -X POST http://localhost:4040/foundation/workflows/execute \\
+  -H "content-type: application/json" \\
+  -H "x-actor: ada.lovelace" \\
+  -H "x-role: operator" \\
+  -d '{"workflow_id":"foundation-trace-demo","action":"workflow:execute","inputs":["seed:demo"]}'
+```
+
+### Read a Run
+
+```bash
+curl -X GET http://localhost:4040/foundation/runs/<run_id> \\
+  -H "x-actor: ada.lovelace" \\
+  -H "x-role: observer"
+```

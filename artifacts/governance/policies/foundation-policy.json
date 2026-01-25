@@ -1,0 +1,37 @@
+{
+  "policy_id": "foundation-policy",
+  "name": "Foundation baseline",
+  "version": "0.2.0",
+  "owner": "foundation",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "updated_at": "2025-01-01T00:00:00.000Z",
+  "levels": [
+    {
+      "level": "A0",
+      "name": "Observer",
+      "description": "Read-only access.",
+      "allowed_actions": ["run:read", "retrieval:query"],
+      "requires_human_review": false,
+      "requires_run_logging": true,
+      "restricted_data": ["restricted"]
+    },
+    {
+      "level": "A1",
+      "name": "Operator",
+      "description": "Workflow execution within policy.",
+      "allowed_actions": [
+        "run:read",
+        "workflow:execute",
+        "connector:ingest",
+        "gateway:execute",
+        "retrieval:query",
+        "evaluation:score",
+        "tool:execute"
+      ],
+      "requires_human_review": false,
+      "requires_run_logging": true,
+      "restricted_data": []
+    }
+  ],
+  "escalation_path": ["A0", "A1"]
+}

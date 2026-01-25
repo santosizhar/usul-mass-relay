@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RunRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "run_id",
+    "timestamp",
+    "source",
+    "actor",
+    "purpose",
+    "inputs",
+    "outputs",
+    "status",
+    "trace"
+  ],
+  "properties": {
+    "run_id": {
+      "type": "string",
+      "description": "Unique identifier (ULID or UUID).",
+      "pattern": "^[0-9A-Z]{26}$|^[0-9a-fA-F-]{36}$"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "source": {
+      "type": "string",
+      "enum": ["control-plane", "governed-execution"]
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "inputs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "outputs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "status": {
+      "type": "string",
+      "enum": ["success", "failure", "partial"]
+    },
+    "trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trace_id", "span_id"],
+      "properties": {
+        "trace_id": { "type": "string", "minLength": 1 },
+        "span_id": { "type": "string", "minLength": 1 }
+      }
+    },
+    "workflow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["workflow_id", "status", "started_at", "steps"],
+      "properties": {
+        "workflow_id": { "type": "string", "minLength": 1 },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "running", "waiting_hitl", "success", "failure", "partial"]
+        },
+        "started_at": { "type": "string", "format": "date-time" },
+        "completed_at": { "type": "string", "format": "date-time" },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["step_id", "status", "attempts"],
+            "properties": {
+              "step_id": { "type": "string", "minLength": 1 },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "pending",
+                  "running",
+                  "waiting_hitl",
+                  "success",
+                  "failure",
+                  "skipped"
+                ]
+              },
+              "attempts": { "type": "integer", "minimum": 0 },
+              "started_at": { "type": "string", "format": "date-time" },
+              "completed_at": { "type": "string", "format": "date-time" },
+              "outputs": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "last_error": { "type": "string" },
+              "hitl_request_id": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

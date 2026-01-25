@@ -30,6 +30,11 @@
       "workflow_id": "workflow-ops-writeback",
       "path": "projects/ops-automation-studio/workflows/ops-writeback.workflow.md",
       "description": "Governed write-back workflow with HITL approval and Run logging."
+    },
+    {
+      "workflow_id": "workflow-ops-remediation",
+      "path": "projects/ops-automation-studio/workflows/ops-remediation.workflow.json",
+      "description": "Sample runtime workflow with retries, approvals, and exception queues."
     }
   ],
   "integrations": [

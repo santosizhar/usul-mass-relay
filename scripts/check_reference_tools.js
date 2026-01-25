@@ -7,7 +7,7 @@ const repoRoot = path.resolve(__dirname, "..");
 const schemaPath = path.join(
   repoRoot,
   "packages",
-  "reference-tools",
+  "execution-contracts",
   "src",
   "reference-tools.schema.json"
 );

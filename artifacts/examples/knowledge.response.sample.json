@@ -1,0 +1,8 @@
+{
+  "response_id": "knowledge-response-001",
+  "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E4",
+  "created_at": "2024-01-01T00:00:00Z",
+  "answer": "The operations runbook recommends using the standard incident response checklist and escalating according to severity.",
+  "citation_package_id": "citation-package-001",
+  "citation_sources": ["source-ops-runbook"]
+}

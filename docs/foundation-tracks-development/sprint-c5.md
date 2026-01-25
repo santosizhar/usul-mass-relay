@@ -5,19 +5,19 @@ validates contract alignment, and lists outstanding gaps.
 
 ## Reviewed artifacts
 
-- Agent Playbook schema and sample (`packages/agent-playbook/src/agent-playbook.ts`,
-  `packages/agent-playbook/src/agent-playbook.schema.json`,
+- Agent Playbook schema and sample (`packages/governance-contracts/src/agent-playbook.ts`,
+  `packages/governance-contracts/src/agent-playbook.schema.json`,
   `artifacts/examples/agent-playbook.sample.json`).
-- Governance policy ladder schema and sample (`packages/governance-policy/src/governance-policy.ts`,
-  `packages/governance-policy/src/governance-policy.schema.json`,
+- Governance policy ladder schema and sample (`packages/governance-contracts/src/governance-policy.ts`,
+  `packages/governance-contracts/src/governance-policy.schema.json`,
   `artifacts/examples/governance.policy.sample.json`).
-- HITL and audit schemas with samples (`packages/hitl-audit/src/hitl.ts`,
-  `packages/hitl-audit/src/hitl-request.schema.json`,
-  `packages/hitl-audit/src/audit-log.schema.json`,
+- HITL and audit schemas with samples (`packages/governance-contracts/src/hitl.ts`,
+  `packages/governance-contracts/src/hitl-request.schema.json`,
+  `packages/governance-contracts/src/audit-log.schema.json`,
   `artifacts/examples/hitl.request.sample.json`,
   `artifacts/examples/audit.log.sample.json`).
-- Governance registry schema and sample (`packages/governance-registry/src/registry.ts`,
-  `packages/governance-registry/src/registry.schema.json`,
+- Governance registry schema and sample (`packages/governance-contracts/src/registry.ts`,
+  `packages/governance-contracts/src/registry.schema.json`,
   `artifacts/examples/governance.registry.sample.json`).
 - Track C sprint summaries (`docs/foundation-tracks-development/sprint-c1-c2.md`, `docs/foundation-tracks-development/sprint-c3-c4.md`).
 

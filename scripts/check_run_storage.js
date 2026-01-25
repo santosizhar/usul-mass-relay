@@ -7,7 +7,7 @@ const repoRoot = path.resolve(__dirname, "..");
 const schemaPath = path.join(
   repoRoot,
   "packages",
-  "run-storage",
+  "run",
   "src",
   "run-storage.schema.json"
 );

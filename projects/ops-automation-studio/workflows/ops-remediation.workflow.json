@@ -1,0 +1,51 @@
+{
+  "workflow_id": "workflow-ops-remediation",
+  "name": "Ops remediation with HITL gates",
+  "description": "Sample runtime workflow with retries, approvals, and exception queues.",
+  "version": "1.0.0",
+  "steps": [
+    {
+      "step_id": "collect-context",
+      "name": "Collect incident context",
+      "action": "collect-context",
+      "retry": { "max_attempts": 2, "delay_ms": 500 },
+      "on_failure": "halt"
+    },
+    {
+      "step_id": "draft-plan",
+      "name": "Draft remediation plan",
+      "action": "draft-plan",
+      "retry": { "max_attempts": 1 },
+      "on_failure": "halt"
+    },
+    {
+      "step_id": "request-approval",
+      "name": "Request human approval",
+      "action": "noop",
+      "hitl": {
+        "type": "approval",
+        "summary": "Approve remediation plan before executing changes.",
+        "context_refs": ["artifact://plans/remediation-plan.md"]
+      }
+    },
+    {
+      "step_id": "apply-change",
+      "name": "Apply governed change",
+      "action": "apply-change",
+      "retry": { "max_attempts": 3, "delay_ms": 1000 },
+      "on_failure": "queue-exception",
+      "hitl": {
+        "type": "exception",
+        "summary": "Escalate failed change for exception handling.",
+        "context_refs": ["artifact://runs/run-log.json"]
+      }
+    },
+    {
+      "step_id": "record-audit",
+      "name": "Record audit trail",
+      "action": "record-audit",
+      "retry": { "max_attempts": 1 },
+      "on_failure": "continue"
+    }
+  ]
+}

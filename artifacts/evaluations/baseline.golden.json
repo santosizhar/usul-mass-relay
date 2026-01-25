@@ -1,0 +1,14 @@
+{
+  "dataset_id": "baseline-regression-v1",
+  "description": "Baseline regression gate for trace event collection counts.",
+  "runs": [
+    {
+      "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E5",
+      "expected": {
+        "workflow": 1,
+        "agent": 2,
+        "tool": 1
+      }
+    }
+  ]
+}

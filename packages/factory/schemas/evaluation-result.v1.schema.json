@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvaluationResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "object_type",
+    "schema_version",
+    "evaluation_result_id",
+    "target_ref",
+    "evaluator_id",
+    "score",
+    "score_range",
+    "passed",
+    "evaluated_at",
+    "created_at",
+    "updated_at"
+  ],
+  "properties": {
+    "object_type": { "type": "string", "enum": ["evaluation_result"] },
+    "schema_version": { "type": "string", "enum": ["1.0.0"] },
+    "evaluation_result_id": {
+      "type": "string",
+      "pattern": "^[0-9A-Z]{26}$|^[0-9a-fA-F-]{36}$"
+    },
+    "target_ref": { "type": "string", "minLength": 1 },
+    "evaluator_id": { "type": "string", "minLength": 1 },
+    "score": { "type": "number" },
+    "score_range": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["min", "max"],
+      "properties": {
+        "min": { "type": "number" },
+        "max": { "type": "number" }
+      }
+    },
+    "passed": { "type": "boolean" },
+    "evaluated_at": { "type": "string", "format": "date-time" },
+    "rubric": { "type": "string" },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["metric", "value"],
+        "properties": {
+          "metric": { "type": "string", "minLength": 1 },
+          "value": { "type": "number" },
+          "unit": { "type": "string" }
+        }
+      }
+    },
+    "notes": { "type": "string" },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "metadata": { "type": "object", "additionalProperties": true }
+  }
+}
