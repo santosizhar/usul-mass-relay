@@ -9,7 +9,7 @@ Read first:
 - MP1__mass-relay__chat1-masterprompt.md
 - MP2__mass-relay__chat2-transformer.md
 - MP3__mass-relay__executive-summary.md
-- mass-relay__roadmap.md
+- docs/foundation-tracks-development/mass-relay__roadmap.md
 
 Hard locks:
 - Prompt Pack = MP1 / MP2 / MP3 only
@@ -52,5 +52,5 @@ Acceptance criteria:
 - Documentation is updated and internally consistent.
 
 References:
-- mass-relay__roadmap.md
+- docs/foundation-tracks-development/mass-relay__roadmap.md
 - MP3__mass-relay__executive-summary.md

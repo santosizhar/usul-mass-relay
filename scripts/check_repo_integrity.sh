@@ -7,21 +7,41 @@ required_files=(
   docs/terminology.md
   docs/governance.md
   docs/run-artifact-conventions.md
-  docs/track-a/sprint-a1-a2.md
-  docs/track-a/sprint-a3-a4.md
-  docs/track-a/sprint-a5.md
-  docs/track-b/sprint-b1-b2.md
-  docs/track-b/sprint-b3-b4.md
-  docs/track-b/sprint-b5.md
-  docs/track-c/sprint-c1-c2.md
-  docs/track-c/sprint-c3-c4.md
-  docs/track-c/sprint-c5.md
-  docs/track-d/sprint-d1-d2.md
-  docs/track-d/sprint-d3-d4.md
-  docs/track-d/sprint-d5.md
-  docs/track-g/sprint-g1-g2.md
-  docs/track-g/sprint-g3-g4.md
-  docs/track-g/sprint-g5.md
+  docs/foundation-tracks-development/sprint-a1-a2.md
+  docs/foundation-tracks-development/sprint-a3-a4.md
+  docs/foundation-tracks-development/sprint-a5.md
+  docs/foundation-tracks-development/sprint-b1-b2.md
+  docs/foundation-tracks-development/sprint-b3-b4.md
+  docs/foundation-tracks-development/sprint-b5.md
+  docs/foundation-tracks-development/sprint-c1-c2.md
+  docs/foundation-tracks-development/sprint-c3-c4.md
+  docs/foundation-tracks-development/sprint-c5.md
+  docs/foundation-tracks-development/sprint-d1-d2.md
+  docs/foundation-tracks-development/sprint-d3-d4.md
+  docs/foundation-tracks-development/sprint-d5.md
+  docs/foundation-tracks-development/sprint-e1-e2.md
+  docs/foundation-tracks-development/sprint-e3-e4.md
+  docs/foundation-tracks-development/sprint-e5.md
+  docs/foundation-tracks-development/sprint-f1-f2.md
+  docs/foundation-tracks-development/sprint-f3-f4.md
+  docs/foundation-tracks-development/sprint-f5.md
+  docs/foundation-tracks-development/sprint-g1-g2.md
+  docs/foundation-tracks-development/sprint-g3-g4.md
+  docs/foundation-tracks-development/sprint-g5.md
+  docs/foundation-tracks-development/sprint-h1-h2.md
+  docs/foundation-tracks-development/sprint-h3-h4.md
+  docs/foundation-tracks-development/sprint-h5.md
+  docs/foundation-tracks-development/sprint-z1.md
+  docs/foundation-tracks-development/mass-relay__roadmap.md
+  docs/foundation-tracks-development/mass-relay__track-A__codex-checklist.md
+  docs/foundation-tracks-development/mass-relay__track-B__codex-checklist.md
+  docs/foundation-tracks-development/mass-relay__track-C__codex-checklist.md
+  docs/foundation-tracks-development/mass-relay__track-D__codex-checklist.md
+  docs/foundation-tracks-development/mass-relay__track-E__codex-checklist.md
+  docs/foundation-tracks-development/mass-relay__track-F__codex-checklist.md
+  docs/foundation-tracks-development/mass-relay__track-G__codex-checklist.md
+  docs/foundation-tracks-development/mass-relay__track-H__codex-checklist.md
+  docs/foundation-tracks-development/mass-relay__track-Z__codex-checklist.md
   artifacts/README.md
   artifacts/examples/run.sample.json
   artifacts/examples/run.export.sample.jsonl

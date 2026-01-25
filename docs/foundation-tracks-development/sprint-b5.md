@@ -11,7 +11,7 @@ validates contract alignment, and lists outstanding gaps.
 - Run artifact samples (`artifacts/examples/run.sample.json`, `artifacts/examples/run.export.sample.jsonl`,
   `artifacts/examples/run.events.sample.json`, `artifacts/examples/run.summary.sample.json`).
 - Persisted Run example (`artifacts/runs/01J8Y3H9ZV3EN8R1B0C1R2D3E4/run.json`).
-- Track B sprint summaries (`docs/track-b/sprint-b1-b2.md`, `docs/track-b/sprint-b3-b4.md`).
+- Track B sprint summaries (`docs/foundation-tracks-development/sprint-b1-b2.md`, `docs/foundation-tracks-development/sprint-b3-b4.md`).
 - Control Room runs UI specification (`apps/control-room-runs/README.md`, `apps/control-room-runs/config/run-table.json`).
 
 ## Alignment checks

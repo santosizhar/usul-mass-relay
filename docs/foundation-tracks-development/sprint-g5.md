@@ -10,7 +10,7 @@ validates contract alignment, and lists outstanding gaps.
   `scripts/check_golden_runs.js`).
 - TS↔Python contract checks (`scripts/check_ts_python_contracts.js`).
 - Boundary enforcement checks (`scripts/check_boundary_enforcement.js`).
-- Track G sprint summaries (`docs/track-g/sprint-g1-g2.md`, `docs/track-g/sprint-g3-g4.md`).
+- Track G sprint summaries (`docs/foundation-tracks-development/sprint-g1-g2.md`, `docs/foundation-tracks-development/sprint-g3-g4.md`).
 
 ## Alignment checks
 

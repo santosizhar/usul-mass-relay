@@ -22,7 +22,7 @@ validates contract alignment, and lists outstanding gaps.
   `packages/reference-tools/src/tools/fetch_object_storage.py`,
   `packages/reference-tools/src/tools/record_run_summary.py`,
   `artifacts/examples/reference.tools.sample.json`).
-- Track D sprint summaries (`docs/track-d/sprint-d1-d2.md`, `docs/track-d/sprint-d3-d4.md`).
+- Track D sprint summaries (`docs/foundation-tracks-development/sprint-d1-d2.md`, `docs/foundation-tracks-development/sprint-d3-d4.md`).
 
 ## Alignment checks
 

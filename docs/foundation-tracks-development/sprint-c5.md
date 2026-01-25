@@ -19,7 +19,7 @@ validates contract alignment, and lists outstanding gaps.
 - Governance registry schema and sample (`packages/governance-registry/src/registry.ts`,
   `packages/governance-registry/src/registry.schema.json`,
   `artifacts/examples/governance.registry.sample.json`).
-- Track C sprint summaries (`docs/track-c/sprint-c1-c2.md`, `docs/track-c/sprint-c3-c4.md`).
+- Track C sprint summaries (`docs/foundation-tracks-development/sprint-c1-c2.md`, `docs/foundation-tracks-development/sprint-c3-c4.md`).
 
 ## Alignment checks
 

@@ -1,7 +1,10 @@
 # Mass Relay — Roadmap (Tracks & Sprints)
 
 Authoritative sequencing reference.
-Execution detail lives in per-track codex checklists.
+Execution detail lives in per-track codex checklists and sprint summaries in this folder.
+
+Status: Tracks A–H and Z are documented with scaffolded artifacts, sample data, and validation
+checks. Runtime integrations remain out of scope for the current foundation phase.
 
 Track A — Repo, Contracts & Conventions: A1–A5
 Track B — Run-Centric Observability: B1–B5

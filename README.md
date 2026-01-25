@@ -10,6 +10,7 @@ terminology for the project.
 - `packages/`: Foundation modules (shared platform capabilities).
 - `projects/`: Reference projects built on top of Foundation modules.
 - `docs/`: Documentation, governance, and terminology.
+- `docs/foundation-tracks-development/`: Track checklists, sprint summaries, and roadmap references.
 - `artifacts/`: Versioned outputs and snapshots produced by Runs.
 
 ## Track A scope
@@ -33,6 +34,16 @@ coverage includes:
 - **B3 — Instrumentation helpers**: event contracts and summary helpers for Runs.
 - **B4 — Control Room runs UI**: read-only UI specification and configuration.
 - **B5 — Review**: consolidated review of Track B artifacts and gaps.
+
+## Track C scope
+
+Track C defines governance and Agent Playbook contracts. The current sprint coverage includes:
+
+- **C1 — Playbook schema**: Agent Playbook interfaces, schema, and samples.
+- **C2 — Governance policy**: governance ladder definitions and policy samples.
+- **C3 — HITL hooks & audit logging**: HITL request and audit log contracts.
+- **C4 — Registry & versioning**: governance registry schemas and samples.
+- **C5 — Review**: consolidated review of Track C artifacts and gaps.
 
 ## Track D scope
 
@@ -84,6 +95,19 @@ Track H delivers the Ops Automation Studio reference project. The current sprint
 - **H3 — Mock integrations**: mock integration catalog and deterministic references.
 - **H4 — Demo scenarios**: demo scenarios catalog with expected Run outputs.
 - **H5 — Review**: Track H review of Ops Automation Studio artifacts and gaps.
+
+## Track Z scope
+
+Track Z finalizes repository conventions and hygiene. The current sprint coverage includes:
+
+- **Z1 — Conventions & hygiene**: consolidated review of documentation, contracts, and integrity checks.
+
+## Status
+
+Mass Relay currently provides execution-grade scaffolding and documentation for Foundation contracts,
+governance, the governed execution lane, Control Room UI surfaces, and the Ops Automation Studio
+reference project. Runtime services are not yet wired; artifacts and checks are deterministic,
+file-based references pending future integrations.
 
 ## Guardrails
 

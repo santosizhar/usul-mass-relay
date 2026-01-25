@@ -1,4 +1,4 @@
-# Mass Relay — Track A — Codex Checklist
+# Mass Relay — Track G — Codex Checklist
 
 
 ## Codex Intro Prompt (MANDATORY)
@@ -9,7 +9,7 @@ Read first:
 - MP1__mass-relay__chat1-masterprompt.md
 - MP2__mass-relay__chat2-transformer.md
 - MP3__mass-relay__executive-summary.md
-- mass-relay__roadmap.md
+- docs/foundation-tracks-development/mass-relay__roadmap.md
 
 Hard locks:
 - Prompt Pack = MP1 / MP2 / MP3 only
@@ -21,12 +21,12 @@ Hard locks:
 - Every operation emits a Run
 
 Track specialization:
-- Repo, contracts, conventions
+- Testing & regression
 
-## Sprint A1 — Repo initialization
+## Sprint G1 — Schema tests
 
 Objective:
-- Complete Track A Sprint A1 deliverables at execution-grade quality.
+- Complete Track G Sprint G1 deliverables at execution-grade quality.
 
 Codex tasks:
 1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
@@ -52,13 +52,13 @@ Acceptance criteria:
 - Documentation is updated and internally consistent.
 
 References:
-- mass-relay__roadmap.md
+- docs/foundation-tracks-development/mass-relay__roadmap.md
 - MP3__mass-relay__executive-summary.md
 
-## Sprint A2 — Terminology & governance docs
+## Sprint G2 — Golden runs
 
 Objective:
-- Complete Track A Sprint A2 deliverables at execution-grade quality.
+- Complete Track G Sprint G2 deliverables at execution-grade quality.
 
 Codex tasks:
 1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
@@ -84,13 +84,13 @@ Acceptance criteria:
 - Documentation is updated and internally consistent.
 
 References:
-- mass-relay__roadmap.md
+- docs/foundation-tracks-development/mass-relay__roadmap.md
 - MP3__mass-relay__executive-summary.md
 
-## Sprint A3 — Run & artifact conventions
+## Sprint G3 — TS↔Python contract tests
 
 Objective:
-- Complete Track A Sprint A3 deliverables at execution-grade quality.
+- Complete Track G Sprint G3 deliverables at execution-grade quality.
 
 Codex tasks:
 1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
@@ -116,13 +116,13 @@ Acceptance criteria:
 - Documentation is updated and internally consistent.
 
 References:
-- mass-relay__roadmap.md
+- docs/foundation-tracks-development/mass-relay__roadmap.md
 - MP3__mass-relay__executive-summary.md
 
-## Sprint A4 — Ops Automation Studio scaffold
+## Sprint G4 — Boundary enforcement
 
 Objective:
-- Complete Track A Sprint A4 deliverables at execution-grade quality.
+- Complete Track G Sprint G4 deliverables at execution-grade quality.
 
 Codex tasks:
 1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
@@ -148,13 +148,13 @@ Acceptance criteria:
 - Documentation is updated and internally consistent.
 
 References:
-- mass-relay__roadmap.md
+- docs/foundation-tracks-development/mass-relay__roadmap.md
 - MP3__mass-relay__executive-summary.md
 
-## Sprint A5 — Review
+## Sprint G5 — Review
 
 Objective:
-- Complete Track A Sprint A5 deliverables at execution-grade quality.
+- Complete Track G Sprint G5 deliverables at execution-grade quality.
 
 Codex tasks:
 1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
@@ -180,5 +180,5 @@ Acceptance criteria:
 - Documentation is updated and internally consistent.
 
 References:
-- mass-relay__roadmap.md
+- docs/foundation-tracks-development/mass-relay__roadmap.md
 - MP3__mass-relay__executive-summary.md

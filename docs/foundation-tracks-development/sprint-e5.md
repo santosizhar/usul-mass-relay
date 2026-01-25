@@ -17,7 +17,7 @@ validates contract alignment, and lists outstanding gaps.
 - Project config persistence contract and sample (`packages/project-config-persistence/src/project-config-persistence.ts`,
   `packages/project-config-persistence/src/project-config-persistence.schema.json`,
   `artifacts/examples/project.config.persistence.sample.json`).
-- Track E sprint summaries (`docs/track-e/sprint-e1-e2.md`, `docs/track-e/sprint-e3-e4.md`).
+- Track E sprint summaries (`docs/foundation-tracks-development/sprint-e1-e2.md`, `docs/foundation-tracks-development/sprint-e3-e4.md`).
 
 ## Alignment checks
 

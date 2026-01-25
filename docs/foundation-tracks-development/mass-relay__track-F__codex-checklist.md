@@ -1,4 +1,4 @@
-# Mass Relay — Track D — Codex Checklist
+# Mass Relay — Track F — Codex Checklist
 
 
 ## Codex Intro Prompt (MANDATORY)
@@ -9,7 +9,7 @@ Read first:
 - MP1__mass-relay__chat1-masterprompt.md
 - MP2__mass-relay__chat2-transformer.md
 - MP3__mass-relay__executive-summary.md
-- mass-relay__roadmap.md
+- docs/foundation-tracks-development/mass-relay__roadmap.md
 
 Hard locks:
 - Prompt Pack = MP1 / MP2 / MP3 only
@@ -21,12 +21,12 @@ Hard locks:
 - Every operation emits a Run
 
 Track specialization:
-- Governed execution lane
+- Control Room UI
 
-## Sprint D1 — Tool manifest & contract
+## Sprint F1 — App scaffold
 
 Objective:
-- Complete Track D Sprint D1 deliverables at execution-grade quality.
+- Complete Track F Sprint F1 deliverables at execution-grade quality.
 
 Codex tasks:
 1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
@@ -52,13 +52,13 @@ Acceptance criteria:
 - Documentation is updated and internally consistent.
 
 References:
-- mass-relay__roadmap.md
+- docs/foundation-tracks-development/mass-relay__roadmap.md
 - MP3__mass-relay__executive-summary.md
 
-## Sprint D2 — Python runner
+## Sprint F2 — Runs list
 
 Objective:
-- Complete Track D Sprint D2 deliverables at execution-grade quality.
+- Complete Track F Sprint F2 deliverables at execution-grade quality.
 
 Codex tasks:
 1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
@@ -84,13 +84,13 @@ Acceptance criteria:
 - Documentation is updated and internally consistent.
 
 References:
-- mass-relay__roadmap.md
+- docs/foundation-tracks-development/mass-relay__roadmap.md
 - MP3__mass-relay__executive-summary.md
 
-## Sprint D3 — Sandboxing & safety
+## Sprint F3 — Run detail
 
 Objective:
-- Complete Track D Sprint D3 deliverables at execution-grade quality.
+- Complete Track F Sprint F3 deliverables at execution-grade quality.
 
 Codex tasks:
 1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
@@ -116,13 +116,13 @@ Acceptance criteria:
 - Documentation is updated and internally consistent.
 
 References:
-- mass-relay__roadmap.md
+- docs/foundation-tracks-development/mass-relay__roadmap.md
 - MP3__mass-relay__executive-summary.md
 
-## Sprint D4 — Reference tools
+## Sprint F4 — Playbook explorer
 
 Objective:
-- Complete Track D Sprint D4 deliverables at execution-grade quality.
+- Complete Track F Sprint F4 deliverables at execution-grade quality.
 
 Codex tasks:
 1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
@@ -148,13 +148,13 @@ Acceptance criteria:
 - Documentation is updated and internally consistent.
 
 References:
-- mass-relay__roadmap.md
+- docs/foundation-tracks-development/mass-relay__roadmap.md
 - MP3__mass-relay__executive-summary.md
 
-## Sprint D5 — Review
+## Sprint F5 — Review
 
 Objective:
-- Complete Track D Sprint D5 deliverables at execution-grade quality.
+- Complete Track F Sprint F5 deliverables at execution-grade quality.
 
 Codex tasks:
 1. Implement all artifacts required for this sprint exactly as defined by the roadmap and governing contracts.
@@ -180,5 +180,5 @@ Acceptance criteria:
 - Documentation is updated and internally consistent.
 
 References:
-- mass-relay__roadmap.md
+- docs/foundation-tracks-development/mass-relay__roadmap.md
 - MP3__mass-relay__executive-summary.md
