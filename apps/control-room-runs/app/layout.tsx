@@ -37,6 +37,9 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
               <Link className="app-nav-link" href="/playbooks">
                 Playbooks
               </Link>
+              <Link className="app-nav-link" href="/agent-journal">
+                AI journal
+              </Link>
             </nav>
             <main>{children}</main>
           </div>
