@@ -54,6 +54,16 @@ Track E defines storage and state interfaces. The current sprint coverage includ
 - **E4 — Project config persistence**: project config storage metadata and deterministic samples.
 - **E5 — Review**: Track E review of storage and persistence artifacts.
 
+## Track F scope
+
+Track F provisions the Control Room beta UI surfaces. The current sprint coverage includes:
+
+- **F1 — App scaffold**: Next.js scaffold for the Control Room runs surface.
+- **F2 — Runs list**: read-only runs list UI with filters and sample data.
+- **F3 — Run detail**: run detail panel with event timeline and artifact references.
+- **F4 — Playbook explorer**: read-only explorer for Agent Playbooks.
+- **F5 — Review**: consolidated review of Track F artifacts and gaps.
+
 ## Guardrails
 
 - Prompt Pack refers only to MP1/MP2/MP3 artifacts.

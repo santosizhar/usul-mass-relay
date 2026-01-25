@@ -1,0 +1,57 @@
+[
+  {
+    "event_id": "evt-0001",
+    "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E4",
+    "timestamp": "2024-01-01T00:00:00Z",
+    "type": "start",
+    "message": "Run started",
+    "metadata": {
+      "lane": "control-plane"
+    }
+  },
+  {
+    "event_id": "evt-0002",
+    "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E4",
+    "timestamp": "2024-01-01T00:00:01Z",
+    "type": "step",
+    "message": "Validated run schema"
+  },
+  {
+    "event_id": "evt-0003",
+    "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E4",
+    "timestamp": "2024-01-01T00:00:02Z",
+    "type": "finish",
+    "message": "Run completed"
+  },
+  {
+    "event_id": "evt-0101",
+    "run_id": "01J9Z0W8R4F5A6B7C8D9E0F1G2",
+    "timestamp": "2024-02-12T14:32:10Z",
+    "type": "start",
+    "message": "Run started",
+    "metadata": {
+      "lane": "governed-execution"
+    }
+  },
+  {
+    "event_id": "evt-0102",
+    "run_id": "01J9Z0W8R4F5A6B7C8D9E0F1G2",
+    "timestamp": "2024-02-12T14:33:08Z",
+    "type": "step",
+    "message": "Executed governed tool request"
+  },
+  {
+    "event_id": "evt-0201",
+    "run_id": "01J9Z1X2Y3Z4A5B6C7D8E9F0G1",
+    "timestamp": "2024-02-12T16:04:45Z",
+    "type": "start",
+    "message": "Run started"
+  },
+  {
+    "event_id": "evt-0202",
+    "run_id": "01J9Z1X2Y3Z4A5B6C7D8E9F0G1",
+    "timestamp": "2024-02-12T16:05:22Z",
+    "type": "failure",
+    "message": "HITL review rejected"
+  }
+]
