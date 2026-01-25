@@ -9,6 +9,11 @@ The `artifacts/` directory stores versioned outputs produced by Runs.
 - `exports/`: Deterministic snapshots of Runs for downstream analysis (including golden snapshots
   used for regression checks).
 - `evaluations/`: Golden evaluation datasets used by gate checks and regression runs.
+- `governance/`: Governance policy records for Control Room and enforcement services.
+- `ingestion/`: Connector ingestion outputs, lineage snapshots, and connector state.
+- `knowledge/`: Retrieval catalogs used by the knowledge layer runtime.
+- `policy-audit/`: Policy enforcement audit logs emitted by the control plane.
+- `prompts/`: Prompt registry records used by the LLM gateway.
 
 ## Usage notes
 

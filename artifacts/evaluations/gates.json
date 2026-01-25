@@ -1,0 +1,21 @@
+{
+  "config_id": "evaluation-gates",
+  "version": "1.0.0",
+  "updated_at": "2025-01-01T00:00:00.000Z",
+  "rules": [
+    {
+      "gate_id": "gate-quality-min",
+      "name": "Minimum quality score",
+      "min_score": 0.8,
+      "max_score": 1,
+      "required": true
+    },
+    {
+      "gate_id": "gate-quality-warning",
+      "name": "Warning band",
+      "min_score": 0.6,
+      "max_score": 0.79,
+      "required": false
+    }
+  ]
+}

@@ -9,6 +9,7 @@ emit Run log events for observability.
 
 - `src/gateway.ts`: Gateway types, hooks, adapters, and the `Gateway` orchestrator.
 - `src/adapters.ts`: Reference model adapters for common providers (OpenAI, Grok, Deepseek, Gemini, Ollama).
+- `src/file-registry.ts`: File-backed prompt registry loader for `artifacts/prompts`.
 
 ## Required configuration
 

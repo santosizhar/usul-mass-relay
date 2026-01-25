@@ -11,3 +11,8 @@ This package defines the runtime contract for ingestion connectors, including in
 ## Example
 
 See [`examples/sample-crm-connector.ts`](examples/sample-crm-connector.ts) for a minimal stub that wires in the default helpers for change detection, normalization, and lineage.
+
+## Runtime persistence
+
+Use `src/connector-runtime.ts` to persist ingestion results, lineage snapshots, and connector state
+into the `artifacts/ingestion` directory.

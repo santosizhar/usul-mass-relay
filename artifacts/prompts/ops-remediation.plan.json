@@ -1,0 +1,17 @@
+{
+  "prompt_id": "ops-remediation-plan",
+  "name": "Ops remediation planner",
+  "description": "Drafts remediation plans with governed guardrails.",
+  "owner": "foundation",
+  "created_at": "2025-01-01T00:00:00.000Z",
+  "updated_at": "2025-01-01T00:00:00.000Z",
+  "versions": [
+    {
+      "version": "1.0.0",
+      "status": "active",
+      "released_at": "2025-01-01T00:00:00.000Z",
+      "checksum": "checksum-ops-remediation-plan-1.0.0",
+      "content": "You are a remediation planner. Draft a remediation plan using the provided incident context and required policies."
+    }
+  ]
+}

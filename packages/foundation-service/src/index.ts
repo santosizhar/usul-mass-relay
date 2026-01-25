@@ -4,19 +4,24 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 import { GovernanceLevelPolicy, GovernancePolicy } from "../../governance-policy/src/governance-policy";
+import { evaluatePolicy, writePolicyAudit } from "../../governance-policy/src/enforcement";
 import { Gateway, GatewayRequest, GatewayResponse, PromptRegistry, PromptRegistryRecord, StubModelAdapter } from "../../llm-gateway/src/gateway";
-import { retrieveFromSample } from "../../retrieval-stub/src/retrieval-stub";
+import { createFilePromptRegistry } from "../../llm-gateway/src/file-registry";
 import { RunEvent } from "../../run-instrumentation/src/run-events";
 import { buildRunSummary } from "../../run-instrumentation/src/run-instrumentation";
 import { RunRecord } from "../../run-model/src/run";
 import { loadRun, persistRun, upsertRun } from "../../run-persistence/src/run-store";
 import { Connector, ConnectorContext, defaultChangeDetection, defaultLineage, defaultNormalize, runConnectorCycle, SourceRecord } from "../../connector-framework/src/connector-framework";
+import { persistIngestionResult } from "../../connector-framework/src/connector-runtime";
 import { persistFactoryObject } from "../../factory-persistence/src/factory-store";
+import { persistFactoryObjects } from "../../factory-persistence/src/factory-pipeline";
 import { AIRequest, AIResponse, EvaluationResult, RecordObject } from "../../factory-objects/src/types";
 import { CitationPackage } from "../../citation-model/src/citation-package";
 import { ToolRuntimeExecutor } from "../../tool-runtime/src/tool-runtime";
 import { ToolManifest } from "../../tool-manifest/src/tool-manifest";
 import { ExecutionSandbox } from "../../execution-sandbox/src/execution-sandbox";
+import { queryCatalog } from "../../retrieval-runtime/src/catalog-runtime";
+import { applyEvaluationGates, loadGateConfig, persistGateResults } from "../../evaluation-runtime/src/gate-runtime";
 import fs from "node:fs";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -60,6 +65,7 @@ interface RetrievalRequest {
   query_id: string;
   query: string;
   access: {
+    actor?: string;
     roles: string[];
     scopes: string[];
     policy_refs: string[];
@@ -91,7 +97,7 @@ interface ToolExecuteRequest {
   input: Record<string, unknown>;
 }
 
-const governancePolicy: GovernancePolicy = {
+const fallbackGovernancePolicy: GovernancePolicy = {
   policy_id: "foundation-policy",
   name: "Foundation baseline",
   version: "0.1.0",
@@ -103,7 +109,7 @@ const governancePolicy: GovernancePolicy = {
       level: "A0",
       name: "Observer",
       description: "Read-only access.",
-      allowed_actions: ["run:read"],
+      allowed_actions: ["run:read", "retrieval:query"],
       requires_human_review: false,
       requires_run_logging: true,
       restricted_data: ["restricted"]
@@ -112,7 +118,15 @@ const governancePolicy: GovernancePolicy = {
       level: "A1",
       name: "Operator",
       description: "Workflow execution within policy.",
-      allowed_actions: ["run:read", "workflow:execute"],
+      allowed_actions: [
+        "run:read",
+        "workflow:execute",
+        "connector:ingest",
+        "gateway:execute",
+        "retrieval:query",
+        "evaluation:score",
+        "tool:execute"
+      ],
       requires_human_review: false,
       requires_run_logging: true,
       restricted_data: []
@@ -125,6 +139,11 @@ const roleToLevel: Record<string, GovernanceLevelPolicy["level"]> = {
   observer: "A0",
   operator: "A1"
 };
+
+const governancePolicyPath = path.join(repoRoot, "artifacts", "governance", "policies", "foundation-policy.json");
+const governancePolicy: GovernancePolicy = fs.existsSync(governancePolicyPath)
+  ? (JSON.parse(fs.readFileSync(governancePolicyPath, "utf8")) as GovernancePolicy)
+  : fallbackGovernancePolicy;
 
 const workflows: WorkflowDefinition[] = [
   {
@@ -154,19 +173,26 @@ const promptRegistryRecords: PromptRegistryRecord[] = [
   }
 ];
 
-const promptRegistry: PromptRegistry = {
-  getPrompt: (promptId: string): PromptRegistryRecord | undefined => {
-    return promptRegistryRecords.find((record) => record.prompt_id === promptId);
-  },
-  getPromptVersion: (promptId: string, version: string) => {
-    const prompt = promptRegistryRecords.find((record) => record.prompt_id === promptId);
-    return prompt?.versions.find((item) => item.version === version);
-  },
-  listPromptVersions: (promptId: string) => {
-    const prompt = promptRegistryRecords.find((record) => record.prompt_id === promptId);
-    return prompt?.versions ?? [];
+const promptRegistry: PromptRegistry = (() => {
+  const fileRegistry = createFilePromptRegistry({ baseDir: path.join(repoRoot, "artifacts", "prompts") });
+  if (fileRegistry.getPrompt("ops-remediation-plan")) {
+    return fileRegistry;
   }
-};
+
+  return {
+    getPrompt: (promptId: string): PromptRegistryRecord | undefined => {
+      return promptRegistryRecords.find((record) => record.prompt_id === promptId);
+    },
+    getPromptVersion: (promptId: string, version: string) => {
+      const prompt = promptRegistryRecords.find((record) => record.prompt_id === promptId);
+      return prompt?.versions.find((item) => item.version === version);
+    },
+    listPromptVersions: (promptId: string) => {
+      const prompt = promptRegistryRecords.find((record) => record.prompt_id === promptId);
+      return prompt?.versions ?? [];
+    }
+  };
+})();
 
 const buildGateway = (runLogger?: { record: (event: RunEvent) => void }) =>
   new Gateway({
@@ -220,6 +246,14 @@ const buildGateway = (runLogger?: { record: (event: RunEvent) => void }) =>
     runLogger
   });
 
+const loadToolManifest = (): ToolManifest => {
+  const manifestPath = path.join(repoRoot, "artifacts", "examples", "tool.manifest.sample.json");
+  if (fs.existsSync(manifestPath)) {
+    return JSON.parse(fs.readFileSync(manifestPath, "utf8")) as ToolManifest;
+  }
+  return toolManifest;
+};
+
 const toolManifest: ToolManifest = {
   manifest_id: "foundation-tools",
   name: "Foundation reference tools",
@@ -249,6 +283,14 @@ const toolManifest: ToolManifest = {
       policy_refs: ["sandbox-default"]
     }
   ]
+};
+
+const loadSandboxPolicies = (): ExecutionSandbox[] => {
+  const policyPath = path.join(repoRoot, "artifacts", "examples", "execution.sandbox.sample.json");
+  if (fs.existsSync(policyPath)) {
+    return [JSON.parse(fs.readFileSync(policyPath, "utf8")) as ExecutionSandbox];
+  }
+  return sandboxPolicies;
 };
 
 const sandboxPolicies: ExecutionSandbox[] = [
@@ -284,23 +326,66 @@ const sandboxPolicies: ExecutionSandbox[] = [
   }
 ];
 
-const toolRuntime = new ToolRuntimeExecutor({
-  manifest: toolManifest,
-  sandboxPolicies,
-  toolHandlers: {
-    "ops.echo": (input) => ({
-      status: "success",
-      output: {
-        echoed: String(input["message"] ?? "")
-      }
-    })
-  },
-  defaultSandboxId: "sandbox-default"
-});
+const buildToolRuntime = () =>
+  new ToolRuntimeExecutor({
+    manifest: loadToolManifest(),
+    sandboxPolicies: loadSandboxPolicies(),
+    toolHandlers: {
+      "tool.fetch-object-storage": (input) => ({
+        status: "success",
+        output: {
+          uri: `artifact://storage/${String(input["bucket"] ?? "bucket")}/${String(input["key"] ?? "object")}`,
+          content_type: "application/json"
+        }
+      }),
+      "ops.echo": (input) => ({
+        status: "success",
+        output: {
+          echoed: String(input["message"] ?? "")
+        }
+      }),
+      "tool.write-audit-log": (input) => ({
+        status: "success",
+        output: {
+          record_id: `audit-${randomUUID()}`,
+          stored_at: new Date().toISOString(),
+          event: String(input["event"] ?? "unknown")
+        }
+      })
+    },
+    defaultSandboxId: "sandbox-default"
+  });
 
-const findPolicyForRole = (role: string): GovernanceLevelPolicy | undefined => {
+const enforcePolicyAction = (
+  actor: string,
+  role: string,
+  action: string,
+  resource?: string
+): { ok: boolean; error?: string } => {
   const level = roleToLevel[role];
-  return governancePolicy.levels.find((item) => item.level === level);
+  if (!level) {
+    return { ok: false, error: `Unknown role ${role}` };
+  }
+  const decision = evaluatePolicy({
+    policy: governancePolicy,
+    level,
+    actor,
+    role,
+    action,
+    resource
+  });
+  writePolicyAudit(decision, {
+    policy: governancePolicy,
+    level,
+    actor,
+    role,
+    action,
+    resource
+  });
+  if (!decision.allowed) {
+    return { ok: false, error: decision.violations.join("; ") };
+  }
+  return { ok: true };
 };
 
 const createRunRecord = (purpose: string, actor: ActorContext, inputs: string[]): RunRecord => {
@@ -354,24 +439,14 @@ const createWorkflowRunRecord = (workflow: WorkflowDefinition, request: Workflow
 const handleWorkflowExecute = async (req: RequestLike, res: ResponseLike) => {
   const actor = req.headers.get("x-actor") ?? "unknown";
   const role = req.headers.get("x-role") ?? "observer";
-  const policy = findPolicyForRole(role);
-
-  if (!policy) {
-    return res.json(403, { error: "Unknown role", role });
+  const policyCheck = enforcePolicyAction(actor, role, "workflow:execute");
+  if (!policyCheck.ok) {
+    return res.json(403, { error: policyCheck.error });
   }
 
   const payload = (await parseJsonBody(req)) as WorkflowRequest | null;
   if (!payload) {
     return res.json(400, { error: "Missing workflow payload" });
-  }
-
-  if (!policy.allowed_actions.includes(payload.action)) {
-    return res.json(403, {
-      error: "Action denied",
-      action: payload.action,
-      role,
-      allowed_actions: policy.allowed_actions
-    });
   }
 
   const workflow = workflows.find((item) => item.workflow_id === payload.workflow_id);
@@ -418,10 +493,9 @@ const persistCitationPackage = (citation: CitationPackage): string => {
 const handleConnectorIngest = async (req: RequestLike, res: ResponseLike) => {
   const actor = req.headers.get("x-actor") ?? "unknown";
   const role = req.headers.get("x-role") ?? "operator";
-  const policy = findPolicyForRole(role);
-
-  if (!policy) {
-    return res.json(403, { error: "Unknown role", role });
+  const policyCheck = enforcePolicyAction(actor, role, "connector:ingest");
+  if (!policyCheck.ok) {
+    return res.json(403, { error: policyCheck.error });
   }
 
   const payload = (await parseJsonBody(req)) as ConnectorIngestRequest | null;
@@ -477,7 +551,12 @@ const handleConnectorIngest = async (req: RequestLike, res: ResponseLike) => {
   const persistedObjects = ingest.changes.map((change, index) => {
     const objectId = `${payload.source_system}-${change.record.record_id}-${index}`;
     const recordObject = mapRecordObject(change.record, objectId, payload.source_system);
-    return persistFactoryObject(recordObject);
+    return recordObject;
+  });
+
+  const factoryPersist = persistFactoryObjects(persistedObjects);
+  const ingestionArtifacts = persistIngestionResult(ingest, {
+    baseDir: path.join(repoRoot, "artifacts", "ingestion")
   });
 
   run.outputs = [
@@ -490,17 +569,17 @@ const handleConnectorIngest = async (req: RequestLike, res: ResponseLike) => {
   return res.json(200, {
     run,
     ingestion: ingest,
-    persisted_objects: persistedObjects
+    persisted_objects: factoryPersist,
+    ingestion_artifacts: ingestionArtifacts
   });
 };
 
 const handleGatewayExecute = async (req: RequestLike, res: ResponseLike) => {
   const actor = req.headers.get("x-actor") ?? "unknown";
   const role = req.headers.get("x-role") ?? "operator";
-  const policy = findPolicyForRole(role);
-
-  if (!policy) {
-    return res.json(403, { error: "Unknown role", role });
+  const policyCheck = enforcePolicyAction(actor, role, "gateway:execute");
+  if (!policyCheck.ok) {
+    return res.json(403, { error: policyCheck.error });
   }
 
   const payload = (await parseJsonBody(req)) as GatewayExecuteRequest | null;
@@ -581,10 +660,9 @@ const handleGatewayExecute = async (req: RequestLike, res: ResponseLike) => {
 const handleRetrievalQuery = async (req: RequestLike, res: ResponseLike) => {
   const actor = req.headers.get("x-actor") ?? "unknown";
   const role = req.headers.get("x-role") ?? "observer";
-  const policy = findPolicyForRole(role);
-
-  if (!policy) {
-    return res.json(403, { error: "Unknown role", role });
+  const policyCheck = enforcePolicyAction(actor, role, "retrieval:query");
+  if (!policyCheck.ok) {
+    return res.json(403, { error: policyCheck.error });
   }
 
   const payload = (await parseJsonBody(req)) as RetrievalRequest | null;
@@ -594,11 +672,16 @@ const handleRetrievalQuery = async (req: RequestLike, res: ResponseLike) => {
 
   const queryId = payload.query_id;
   const runId = randomUUID();
-  const result = retrieveFromSample(
+  const result = queryCatalog(
     {
       query_id: queryId,
-      query: payload.query,
-      access: payload.access,
+      query_text: payload.query,
+      access: {
+        actor: payload.access.actor ?? actor,
+        roles: payload.access.roles,
+        scopes: payload.access.scopes,
+        policy_refs: payload.access.policy_refs
+      },
       filters: payload.filters
     },
     { runId }
@@ -611,7 +694,7 @@ const handleRetrievalQuery = async (req: RequestLike, res: ResponseLike) => {
     created_at: new Date().toISOString(),
     sources: result.results.map((match) => ({
       source_id: match.document.document_id,
-      uri: match.document.source_uri,
+      uri: match.document.uri,
       title: match.document.title,
       excerpt: match.document.excerpt,
       content_type: match.document.content_type,
@@ -650,10 +733,9 @@ const handleRetrievalQuery = async (req: RequestLike, res: ResponseLike) => {
 const handleEvaluation = async (req: RequestLike, res: ResponseLike) => {
   const actor = req.headers.get("x-actor") ?? "unknown";
   const role = req.headers.get("x-role") ?? "operator";
-  const policy = findPolicyForRole(role);
-
-  if (!policy) {
-    return res.json(403, { error: "Unknown role", role });
+  const policyCheck = enforcePolicyAction(actor, role, "evaluation:score");
+  if (!policyCheck.ok) {
+    return res.json(403, { error: policyCheck.error });
   }
 
   const payload = (await parseJsonBody(req)) as EvaluationRequest | null;
@@ -680,6 +762,12 @@ const handleEvaluation = async (req: RequestLike, res: ResponseLike) => {
 
   persistFactoryObject(evaluation);
 
+  const gateConfig = loadGateConfig(path.join(repoRoot, "artifacts", "evaluations", "gates.json"));
+  const gateResults = applyEvaluationGates(evaluation.score, gateConfig);
+  const gateFile = persistGateResults(evaluation.evaluation_result_id, gateResults);
+  const requiredGatePass =
+    gateResults.length === 0 || gateResults.filter((gate) => gate.rule.required).every((gate) => gate.passed);
+
   const run: RunRecord = {
     run_id: randomUUID(),
     timestamp: new Date().toISOString(),
@@ -687,8 +775,8 @@ const handleEvaluation = async (req: RequestLike, res: ResponseLike) => {
     actor,
     purpose: "Evaluation scoring",
     inputs: [payload.target_ref],
-    outputs: [`evaluation:${evaluation.evaluation_result_id}`],
-    status: evaluation.passed ? "success" : "failure",
+    outputs: [`evaluation:${evaluation.evaluation_result_id}`, `gates:${gateResults.length}`],
+    status: evaluation.passed && requiredGatePass ? "success" : "failure",
     trace: {
       trace_id: randomUUID(),
       span_id: randomUUID()
@@ -697,16 +785,24 @@ const handleEvaluation = async (req: RequestLike, res: ResponseLike) => {
 
   upsertRun(run, { baseDir: runsBaseDir });
 
-  return res.json(200, { evaluation });
+  return res.json(200, { evaluation, gate_results: gateResults, gate_file: gateFile });
 };
 
 const handleToolExecute = async (req: RequestLike, res: ResponseLike) => {
+  const actor = req.headers.get("x-actor") ?? "unknown";
+  const role = req.headers.get("x-role") ?? "operator";
+  const policyCheck = enforcePolicyAction(actor, role, "tool:execute");
+  if (!policyCheck.ok) {
+    return res.json(403, { error: policyCheck.error });
+  }
+
   const payload = (await parseJsonBody(req)) as ToolExecuteRequest | null;
   if (!payload) {
     return res.json(400, { error: "Missing tool payload" });
   }
 
   const runId = payload.run_id ?? randomUUID();
+  const toolRuntime = buildToolRuntime();
   const result = await toolRuntime.execute({
     request_id: randomUUID(),
     run_id: runId,
@@ -743,14 +839,9 @@ const handleToolExecute = async (req: RequestLike, res: ResponseLike) => {
 const handleRunRead = (req: RequestLike, res: ResponseLike) => {
   const actor = req.headers.get("x-actor") ?? "unknown";
   const role = req.headers.get("x-role") ?? "observer";
-  const policy = findPolicyForRole(role);
-
-  if (!policy) {
-    return res.json(403, { error: "Unknown role", role });
-  }
-
-  if (!policy.allowed_actions.includes("run:read")) {
-    return res.json(403, { error: "Action denied", action: "run:read", role });
+  const policyCheck = enforcePolicyAction(actor, role, "run:read");
+  if (!policyCheck.ok) {
+    return res.json(403, { error: policyCheck.error });
   }
 
   const runId = req.params.get("runId");

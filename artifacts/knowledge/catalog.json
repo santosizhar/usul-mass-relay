@@ -1,0 +1,35 @@
+{
+  "catalog_id": "knowledge-catalog-001",
+  "name": "Foundation Knowledge Catalog",
+  "updated_at": "2025-01-01T00:00:00.000Z",
+  "documents": [
+    {
+      "document_id": "doc-ops-incident-brief",
+      "collection_id": "ops-automation",
+      "title": "Incident 4921 Brief",
+      "uri": "artifact://knowledge/incident-4921.md",
+      "content_type": "text/markdown",
+      "excerpt": "Incident 4921 describes elevated error rates in the payment pipeline and required remediation steps.",
+      "tags": ["ops", "incident", "payments"],
+      "checksum": "checksum-incident-4921",
+      "permissions": {
+        "visibility": "restricted",
+        "allowed_roles": ["operator", "observer"],
+        "required_scopes": ["ops:read"],
+        "policy_refs": ["foundation-policy"]
+      },
+      "version": {
+        "version_id": "v1",
+        "version_tag": "latest",
+        "created_at": "2025-01-01T00:00:00.000Z",
+        "updated_at": "2025-01-01T00:00:00.000Z",
+        "source_system": "ops",
+        "source_version": "4921"
+      },
+      "freshness": {
+        "valid_from": "2025-01-01T00:00:00.000Z",
+        "last_reviewed_at": "2025-01-02T00:00:00.000Z"
+      }
+    }
+  ]
+}
