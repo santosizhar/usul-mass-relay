@@ -56,6 +56,51 @@
         "trace_id": { "type": "string", "minLength": 1 },
         "span_id": { "type": "string", "minLength": 1 }
       }
+    },
+    "workflow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["workflow_id", "status", "started_at", "steps"],
+      "properties": {
+        "workflow_id": { "type": "string", "minLength": 1 },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "running", "waiting_hitl", "success", "failure", "partial"]
+        },
+        "started_at": { "type": "string", "format": "date-time" },
+        "completed_at": { "type": "string", "format": "date-time" },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["step_id", "status", "attempts"],
+            "properties": {
+              "step_id": { "type": "string", "minLength": 1 },
+              "status": {
+                "type": "string",
+                "enum": [
+                  "pending",
+                  "running",
+                  "waiting_hitl",
+                  "success",
+                  "failure",
+                  "skipped"
+                ]
+              },
+              "attempts": { "type": "integer", "minimum": 0 },
+              "started_at": { "type": "string", "format": "date-time" },
+              "completed_at": { "type": "string", "format": "date-time" },
+              "outputs": {
+                "type": "array",
+                "items": { "type": "string" }
+              },
+              "last_error": { "type": "string" },
+              "hitl_request_id": { "type": "string" }
+            }
+          }
+        }
+      }
     }
   }
 }

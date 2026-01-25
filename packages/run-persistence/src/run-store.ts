@@ -29,6 +29,32 @@ export const persistRun = (run: RunRecord, options: RunStoreOptions = {}): strin
   return runDir;
 };
 
+export const updateRun = (run: RunRecord, options: RunStoreOptions = {}): string => {
+  const baseDir = options.baseDir ?? DEFAULT_RUNS_DIR;
+  const runDir = getRunDir(run.run_id, baseDir);
+  const runFile = path.join(runDir, "run.json");
+
+  if (!fs.existsSync(runFile)) {
+    throw new Error(`Run does not exist at ${runFile}`);
+  }
+
+  fs.writeFileSync(runFile, `${JSON.stringify(run, null, 2)}\n`, "utf8");
+
+  return runDir;
+};
+
+export const upsertRun = (run: RunRecord, options: RunStoreOptions = {}): string => {
+  const baseDir = options.baseDir ?? DEFAULT_RUNS_DIR;
+  const runDir = getRunDir(run.run_id, baseDir);
+  const runFile = path.join(runDir, "run.json");
+
+  if (fs.existsSync(runFile)) {
+    return updateRun(run, options);
+  }
+
+  return persistRun(run, options);
+};
+
 export const loadRun = (runId: string, options: RunStoreOptions = {}): RunRecord => {
   const baseDir = options.baseDir ?? DEFAULT_RUNS_DIR;
   const runFile = path.join(getRunDir(runId, baseDir), "run.json");
