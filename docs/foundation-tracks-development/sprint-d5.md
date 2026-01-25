@@ -5,22 +5,22 @@ validates contract alignment, and lists outstanding gaps.
 
 ## Reviewed artifacts
 
-- Tool manifest contract and sample (`packages/tool-manifest/src/tool-manifest.ts`,
-  `packages/tool-manifest/src/tool-manifest.schema.json`,
+- Tool manifest contract and sample (`packages/execution-contracts/src/tool-manifest.ts`,
+  `packages/execution-contracts/src/tool-manifest.schema.json`,
   `artifacts/examples/tool.manifest.sample.json`).
-- Python runner contracts, schemas, and stub (`packages/python-runner/src/python-runner.ts`,
-  `packages/python-runner/src/python-runner.request.schema.json`,
-  `packages/python-runner/src/python-runner.response.schema.json`,
-  `packages/python-runner/src/runner.py`,
+- Python runner contracts, schemas, and stub (`packages/execution-contracts/src/python-runner.ts`,
+  `packages/execution-contracts/src/python-runner.request.schema.json`,
+  `packages/execution-contracts/src/python-runner.response.schema.json`,
+  `packages/execution-contracts/src/runner.py`,
   `artifacts/examples/python.runner.request.sample.json`,
   `artifacts/examples/python.runner.response.sample.json`).
-- Execution sandbox contract and sample (`packages/execution-sandbox/src/execution-sandbox.ts`,
-  `packages/execution-sandbox/src/execution-sandbox.schema.json`,
+- Execution sandbox contract and sample (`packages/execution-contracts/src/execution-sandbox.ts`,
+  `packages/execution-contracts/src/execution-sandbox.schema.json`,
   `artifacts/examples/execution.sandbox.sample.json`).
-- Reference tool catalog and stubs (`packages/reference-tools/src/reference-tools.ts`,
-  `packages/reference-tools/src/reference-tools.schema.json`,
-  `packages/reference-tools/src/tools/fetch_object_storage.py`,
-  `packages/reference-tools/src/tools/record_run_summary.py`,
+- Reference tool catalog and stubs (`packages/execution-contracts/src/reference-tools.ts`,
+  `packages/execution-contracts/src/reference-tools.schema.json`,
+  `packages/execution-contracts/src/tools/fetch_object_storage.py`,
+  `packages/execution-contracts/src/tools/record_run_summary.py`,
   `artifacts/examples/reference.tools.sample.json`).
 - Track D sprint summaries (`docs/foundation-tracks-development/sprint-d1-d2.md`, `docs/foundation-tracks-development/sprint-d3-d4.md`).
 

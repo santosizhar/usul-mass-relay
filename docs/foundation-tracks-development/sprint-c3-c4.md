@@ -5,9 +5,9 @@ This document summarizes the Track C deliverables implemented in sprints C3 and 
 ## Sprint C3 — HITL hooks & audit logging
 
 Artifacts:
-- HITL request and audit log TypeScript interfaces in `packages/hitl-audit/src/hitl.ts`.
-- HITL request schema in `packages/hitl-audit/src/hitl-request.schema.json`.
-- Audit log schema in `packages/hitl-audit/src/audit-log.schema.json`.
+- HITL request and audit log TypeScript interfaces in `packages/governance-contracts/src/hitl.ts`.
+- HITL request schema in `packages/governance-contracts/src/hitl-request.schema.json`.
+- Audit log schema in `packages/governance-contracts/src/audit-log.schema.json`.
 - HITL request sample in `artifacts/examples/hitl.request.sample.json`.
 - Audit log sample in `artifacts/examples/audit.log.sample.json`.
 
@@ -17,8 +17,8 @@ Checks:
 ## Sprint C4 — Registry & versioning
 
 Artifacts:
-- Governance registry TypeScript interfaces in `packages/governance-registry/src/registry.ts`.
-- Governance registry schema in `packages/governance-registry/src/registry.schema.json`.
+- Governance registry TypeScript interfaces in `packages/governance-contracts/src/registry.ts`.
+- Governance registry schema in `packages/governance-contracts/src/registry.schema.json`.
 - Governance registry sample in `artifacts/examples/governance.registry.sample.json`.
 
 Checks:

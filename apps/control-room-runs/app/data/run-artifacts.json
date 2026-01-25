@@ -43,7 +43,7 @@
     "inputs": [
       {
         "label": "HITL audit record",
-        "path": "packages/hitl-audit/src/hitl-audit.schema.json",
+        "path": "packages/governance-contracts/src/audit-log.schema.json",
         "kind": "schema"
       }
     ],

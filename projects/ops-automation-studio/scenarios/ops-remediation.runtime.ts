@@ -2,11 +2,11 @@ import fs from "fs";
 import path from "path";
 
 import { executeWorkflow, createInMemoryHitlQueue } from "../../../packages/workflow-runtime/src/workflow-runtime";
-import { RunRecord } from "../../../packages/run-model/src/run";
-import { upsertRun } from "../../../packages/run-persistence/src/run-store";
+import { RunRecord } from "../../../packages/run/src/run";
+import { upsertRun } from "../../../packages/run/src/run-store";
 import { ToolRuntimeExecutor } from "../../../packages/tool-runtime/src/tool-runtime";
-import { ToolManifest } from "../../../packages/tool-manifest/src/tool-manifest";
-import { ExecutionSandbox } from "../../../packages/execution-sandbox/src/execution-sandbox";
+import { ToolManifest } from "../../../packages/execution-contracts/src/tool-manifest";
+import { ExecutionSandbox } from "../../../packages/execution-contracts/src/execution-sandbox";
 
 type OpsWorkflowDefinition = {
   workflow_id: string;

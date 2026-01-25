@@ -7,14 +7,14 @@ const repoRoot = path.resolve(__dirname, "..");
 const requestSchemaPath = path.join(
   repoRoot,
   "packages",
-  "python-runner",
+  "execution-contracts",
   "src",
   "python-runner.request.schema.json"
 );
 const responseSchemaPath = path.join(
   repoRoot,
   "packages",
-  "python-runner",
+  "execution-contracts",
   "src",
   "python-runner.response.schema.json"
 );

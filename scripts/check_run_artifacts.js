@@ -7,7 +7,7 @@ const repoRoot = path.resolve(__dirname, "..");
 const schemaPath = path.join(
   repoRoot,
   "packages",
-  "run-model",
+  "run",
   "src",
   "run.schema.json"
 );

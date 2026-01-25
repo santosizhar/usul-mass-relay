@@ -5,9 +5,9 @@ validates contract alignment, and lists outstanding gaps.
 
 ## Reviewed artifacts
 
-- Run model and schema (`packages/run-model/src/run.ts`, `packages/run-model/src/run.schema.json`).
-- Run persistence and export helpers (`packages/run-persistence/src/run-store.ts`, `packages/run-persistence/src/run-exporter.ts`).
-- Run instrumentation helpers (`packages/run-instrumentation/src/run-events.ts`, `packages/run-instrumentation/src/run-instrumentation.ts`).
+- Run model and schema (`packages/run/src/run.ts`, `packages/run/src/run.schema.json`).
+- Run persistence and export helpers (`packages/run/src/run-store.ts`, `packages/run/src/run-exporter.ts`).
+- Run instrumentation helpers (`packages/run/src/run-events.ts`, `packages/run/src/run-instrumentation.ts`).
 - Run artifact samples (`artifacts/examples/run.sample.json`, `artifacts/examples/run.export.sample.jsonl`,
   `artifacts/examples/run.events.sample.json`, `artifacts/examples/run.summary.sample.json`).
 - Persisted Run example (`artifacts/runs/01J8Y3H9ZV3EN8R1B0C1R2D3E4/run.json`).

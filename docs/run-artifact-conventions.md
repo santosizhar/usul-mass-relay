@@ -22,9 +22,9 @@ must emit a Run record.
 
 ## Run schema
 
-The canonical Run JSON schema lives at `packages/run-model/src/run.schema.json`. All persisted
+The canonical Run JSON schema lives at `packages/run/src/run.schema.json`. All persisted
 Run records must validate against this schema and the corresponding TypeScript interface in
-`packages/run-model/src/run.ts`.
+`packages/run/src/run.ts`.
 
 ## Artifact layout
 

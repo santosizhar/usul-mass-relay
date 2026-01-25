@@ -35,10 +35,10 @@ The Control Room UI ships as a read-only Beta that aggregates runs across Founda
 
 ## Data contract
 
-- Run summaries follow `packages/run-instrumentation/src/run-instrumentation.ts`.
+- Run summaries follow `packages/run/src/run-instrumentation.ts`.
 - Run summaries include a `project` field for cross-project aggregation.
-- Run events follow `packages/run-instrumentation/src/run-events.ts`.
-- Playbooks follow `packages/agent-playbook/src/agent-playbook.ts`.
+- Run events follow `packages/run/src/run-events.ts`.
+- Playbooks follow `packages/governance-contracts/src/agent-playbook.ts`.
 - Table/filter configuration lives in `config/run-table.json`.
 - Sample UI data lives in `app/data/*.json` and is loaded into an in-memory HITL runtime when
   no run or policy artifacts are available.

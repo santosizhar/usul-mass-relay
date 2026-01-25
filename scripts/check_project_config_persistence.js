@@ -7,7 +7,7 @@ const repoRoot = path.resolve(__dirname, "..");
 const schemaPath = path.join(
   repoRoot,
   "packages",
-  "project-config-persistence",
+  "config-persistence",
   "src",
   "project-config-persistence.schema.json"
 );

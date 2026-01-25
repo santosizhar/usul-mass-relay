@@ -15,8 +15,8 @@ Checks:
 ## Sprint E2 — Run persistence
 
 Artifacts:
-- Run persistence TypeScript definitions in `packages/run-storage/src/run-storage.ts`.
-- Run persistence JSON schema in `packages/run-storage/src/run-storage.schema.json`.
+- Run persistence TypeScript definitions in `packages/run/src/run-storage.ts`.
+- Run persistence JSON schema in `packages/run/src/run-storage.schema.json`.
 - Run persistence sample in `artifacts/examples/run.storage.sample.json`.
 
 Checks:

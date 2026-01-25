@@ -8,7 +8,7 @@
   "updated_at": "2024-01-15T00:00:00Z",
   "runtime": {
     "lane": "control-plane",
-    "entrypoint": "packages/agent-playbook/src/ops-triage.ts"
+    "entrypoint": "packages/governance-contracts/src/ops-triage.ts"
   },
   "inputs": [
     "alerts.queue",

@@ -21,7 +21,7 @@ const configPath = path.join(
 const playbookSchemaPath = path.join(
   repoRoot,
   "packages",
-  "agent-playbook",
+  "governance-contracts",
   "src",
   "agent-playbook.schema.json"
 );

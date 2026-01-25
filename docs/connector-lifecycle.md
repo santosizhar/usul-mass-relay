@@ -28,6 +28,6 @@ This document defines the expected lifecycle for ingestion connectors and the in
 
 - **Idempotency**: Re-running a connector with the same `ConnectorContext.state` should produce the same change classification.
 - **Monotonic state updates**: `ConnectorState` should advance forward; never discard newer checkpoints.
-- **Canonical shape**: Every normalized record must conform to the `FactoryObject` schema in `packages/run-model`.
+- **Canonical shape**: Every normalized record must conform to the `FactoryObject` schema in `packages/run`.
 - **Lineage completeness**: If an object depends on other objects, the lineage event must include those upstream identifiers.
 - **Traceability**: `run_id` must be preserved throughout the connector lifecycle and embedded into lineage.

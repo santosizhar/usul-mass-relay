@@ -7,7 +7,7 @@ const repoRoot = path.resolve(__dirname, "..");
 const schemaPath = path.join(
   repoRoot,
   "packages",
-  "playbook-persistence",
+  "config-persistence",
   "src",
   "playbook-persistence.schema.json"
 );

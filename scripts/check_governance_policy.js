@@ -7,7 +7,7 @@ const repoRoot = path.resolve(__dirname, "..");
 const schemaPath = path.join(
   repoRoot,
   "packages",
-  "governance-policy",
+  "governance-contracts",
   "src",
   "governance-policy.schema.json"
 );

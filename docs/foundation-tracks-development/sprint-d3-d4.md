@@ -5,8 +5,8 @@ This document summarizes the Track D deliverables implemented in sprints D3 and 
 ## Sprint D3 — Sandboxing & safety
 
 Artifacts:
-- Execution sandbox TypeScript interfaces in `packages/execution-sandbox/src/execution-sandbox.ts`.
-- Execution sandbox JSON schema in `packages/execution-sandbox/src/execution-sandbox.schema.json`.
+- Execution sandbox TypeScript interfaces in `packages/execution-contracts/src/execution-sandbox.ts`.
+- Execution sandbox JSON schema in `packages/execution-contracts/src/execution-sandbox.schema.json`.
 - Execution sandbox sample in `artifacts/examples/execution.sandbox.sample.json`.
 
 Checks:
@@ -15,9 +15,9 @@ Checks:
 ## Sprint D4 — Reference tools
 
 Artifacts:
-- Reference tool catalog TypeScript interfaces in `packages/reference-tools/src/reference-tools.ts`.
-- Reference tool catalog JSON schema in `packages/reference-tools/src/reference-tools.schema.json`.
-- Reference tool stubs in `packages/reference-tools/src/tools/`.
+- Reference tool catalog TypeScript interfaces in `packages/execution-contracts/src/reference-tools.ts`.
+- Reference tool catalog JSON schema in `packages/execution-contracts/src/reference-tools.schema.json`.
+- Reference tool stubs in `packages/execution-contracts/src/tools/`.
 - Reference tool catalog sample in `artifacts/examples/reference.tools.sample.json`.
 
 Checks:
