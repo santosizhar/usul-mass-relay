@@ -41,6 +41,8 @@ The Control Room UI ships as a read-only Beta that aggregates runs across Founda
 - Playbooks follow `packages/agent-playbook/src/agent-playbook.ts`.
 - Table/filter configuration lives in `config/run-table.json`.
 - Sample UI data lives in `app/data/*.json` and is loaded into an in-memory HITL runtime.
+- When `MASS_RELAY_RUNS_DIR` is set, the UI loads Run summaries from the run artifacts directory
+  and falls back to sample data if no runs are present.
 
 ## User flows
 

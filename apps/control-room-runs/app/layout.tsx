@@ -2,17 +2,19 @@ import "./globals.css";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { RunRuntimeProvider } from "./components/RunRuntimeProvider";
+import { loadRuntimeSeeds } from "./data/runtime-loader";
 
 export const metadata = {
   title: "Control Room Runs",
   description: "Control Room surface for Run observability and HITL actions."
 };
 
-const RootLayout = ({ children }: { children: ReactNode }) => {
+const RootLayout = async ({ children }: { children: ReactNode }) => {
+  const seeds = await loadRuntimeSeeds();
   return (
     <html lang="en">
       <body>
-        <RunRuntimeProvider>
+        <RunRuntimeProvider seeds={seeds}>
           <div className="app-shell">
             <header className="app-header">
               <div>
