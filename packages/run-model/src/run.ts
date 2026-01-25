@@ -31,6 +31,7 @@ export interface WorkflowRunRecord {
   started_at: string;
   completed_at?: string;
   steps: WorkflowStepRecord[];
+}
 export type FactoryObjectKind =
   | "dataset"
   | "entity"

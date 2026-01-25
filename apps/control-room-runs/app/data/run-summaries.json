@@ -26,7 +26,8 @@
     "actor": "ops.supervisor",
     "purpose": "Human-in-the-loop audit review",
     "status": "failed",
-    "trace_id": "trace-example-0003"
+    "trace_id": "trace-example-0003",
+    "project": "Ops Automation Studio"
   },
   {
     "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V2",
@@ -35,7 +36,8 @@
     "actor": "governance.agent",
     "purpose": "Vendor enrichment requiring approval",
     "status": "awaiting_approval",
-    "trace_id": "trace-example-0004"
+    "trace_id": "trace-example-0004",
+    "project": "Ops Automation Studio"
   },
   {
     "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V3",
@@ -44,7 +46,8 @@
     "actor": "ops.supervisor",
     "purpose": "Sensitive export requires HITL sign-off",
     "status": "awaiting_approval",
-    "trace_id": "trace-example-0005"
+    "trace_id": "trace-example-0005",
+    "project": "Ops Automation Studio"
   },
   {
     "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V4",
@@ -53,7 +56,8 @@
     "actor": "sandbox.agent",
     "purpose": "Exception request for network egress",
     "status": "awaiting_exception",
-    "trace_id": "trace-example-0006"
+    "trace_id": "trace-example-0006",
+    "project": "Ops Automation Studio"
   },
   {
     "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V5",
@@ -62,7 +66,8 @@
     "actor": "privacy.bot",
     "purpose": "Retention exception needs review",
     "status": "awaiting_exception",
-    "trace_id": "trace-example-0007"
+    "trace_id": "trace-example-0007",
+    "project": "Ops Automation Studio"
   },
   {
     "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V6",
