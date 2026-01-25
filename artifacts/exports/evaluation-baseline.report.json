@@ -1,0 +1,21 @@
+{
+  "dataset_id": "baseline-regression-v1",
+  "evaluated_at": "2024-01-02T00:00:45Z",
+  "passed": true,
+  "results": [
+    {
+      "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E5",
+      "expected": {
+        "workflow": 1,
+        "agent": 2,
+        "tool": 1
+      },
+      "observed": {
+        "workflow": 1,
+        "agent": 2,
+        "tool": 1
+      },
+      "passed": true
+    }
+  ]
+}
