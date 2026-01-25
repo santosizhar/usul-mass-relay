@@ -1,0 +1,58 @@
+[
+  {
+    "run_id": "01J8Y3H9ZV3EN8R1B0C1R2D3E4",
+    "inputs": [
+      {
+        "label": "Run & artifact conventions",
+        "path": "docs/run-artifact-conventions.md",
+        "kind": "document"
+      }
+    ],
+    "outputs": [
+      {
+        "label": "Run sample",
+        "path": "artifacts/examples/run.sample.json",
+        "kind": "run-output"
+      },
+      {
+        "label": "Run events sample",
+        "path": "artifacts/examples/run.events.sample.json",
+        "kind": "event-log"
+      }
+    ]
+  },
+  {
+    "run_id": "01J9Z0W8R4F5A6B7C8D9E0F1G2",
+    "inputs": [
+      {
+        "label": "Python runner request",
+        "path": "artifacts/examples/python.runner.request.sample.json",
+        "kind": "request"
+      }
+    ],
+    "outputs": [
+      {
+        "label": "Python runner response",
+        "path": "artifacts/examples/python.runner.response.sample.json",
+        "kind": "response"
+      }
+    ]
+  },
+  {
+    "run_id": "01J9Z1X2Y3Z4A5B6C7D8E9F0G1",
+    "inputs": [
+      {
+        "label": "HITL audit record",
+        "path": "packages/hitl-audit/src/hitl-audit.schema.json",
+        "kind": "schema"
+      }
+    ],
+    "outputs": [
+      {
+        "label": "Audit decision log",
+        "path": "artifacts/runs/01J8Y3H9ZV3EN8R1B0C1R2D3E4/run.json",
+        "kind": "run-output"
+      }
+    ]
+  }
+]
