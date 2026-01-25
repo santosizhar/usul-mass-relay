@@ -26,7 +26,8 @@ const orderRunRecord = (run: RunRecord): RunRecord => {
     inputs: run.inputs,
     outputs: run.outputs,
     status: run.status,
-    trace: run.trace
+    trace: run.trace,
+    workflow: run.workflow
   };
 };
 
