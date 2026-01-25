@@ -64,6 +64,17 @@ Track F provisions the Control Room beta UI surfaces. The current sprint coverag
 - **F4 — Playbook explorer**: read-only explorer for Agent Playbooks.
 - **F5 — Review**: consolidated review of Track F artifacts and gaps.
 
+## Track G scope
+
+Track G delivers testing and regression coverage for the foundation contracts. The current sprint
+coverage includes:
+
+- **G1 — Schema tests**: deterministic schema validation suite across Foundation modules.
+- **G2 — Golden runs**: golden Run export snapshot with regression checks.
+- **G3 — TS↔Python contract tests**: contract checks between tool manifests and runner payloads.
+- **G4 — Boundary enforcement**: enforcement checks for Foundation vs Project separation.
+- **G5 — Review**: consolidated review of Track G artifacts and gaps.
+
 ## Guardrails
 
 - Prompt Pack refers only to MP1/MP2/MP3 artifacts.

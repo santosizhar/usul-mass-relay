@@ -6,7 +6,8 @@ The `artifacts/` directory stores versioned outputs produced by Runs.
 
 - `runs/`: Run-specific artifacts, immutable after creation.
 - `examples/`: Sample artifacts used for documentation and validation.
-- `exports/`: Deterministic snapshots of Runs for downstream analysis.
+- `exports/`: Deterministic snapshots of Runs for downstream analysis (including golden snapshots
+  used for regression checks).
 
 ## Usage notes
 
