@@ -8,7 +8,9 @@
     "docs/run-artifact-conventions.md"
   ],
   "outputs": [
-    "artifacts/examples/run.sample.json"
+    "artifacts/examples/run.sample.json",
+    "artifacts/examples/knowledge.response.sample.json",
+    "artifacts/examples/citation.package.sample.json"
   ],
   "status": "success",
   "trace": {
