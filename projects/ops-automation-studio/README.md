@@ -25,3 +25,5 @@ projects/ops-automation-studio/
 
 - The Control Room remains read-only and will consume outputs from this project.
 - Playbook and workflow definitions are static references until execution wiring lands.
+- `scenarios/ops-remediation.runtime.ts` provides a runnable, end-to-end workflow demo that exercises
+  HITL gates and governed execution handlers.

@@ -18,6 +18,13 @@ export type RunRuntimeContextValue = {
   markPolicyReviewed: (id: string, reviewer: string) => void;
 };
 
+export type RunRuntimeSeeds = {
+  runs?: RunSummary[];
+  approvals?: ApprovalRequest[];
+  exceptions?: ExceptionRequest[];
+  policies?: PolicyRecord[];
+};
+
 const RunRuntimeContext = createContext<RunRuntimeContextValue | undefined>(undefined);
 
 const updateRunStatus = (
@@ -28,11 +35,17 @@ const updateRunStatus = (
   return runs.map((run) => (run.run_id === runId ? { ...run, status } : run));
 };
 
-export const RunRuntimeProvider = ({ children }: { children: ReactNode }) => {
-  const [runs, setRuns] = useState<RunSummary[]>(runSeed);
-  const [approvals, setApprovals] = useState<ApprovalRequest[]>(approvalSeed);
-  const [exceptions, setExceptions] = useState<ExceptionRequest[]>(exceptionSeed);
-  const [policies, setPolicies] = useState<PolicyRecord[]>(policySeed);
+export const RunRuntimeProvider = ({
+  children,
+  seeds
+}: {
+  children: ReactNode;
+  seeds?: RunRuntimeSeeds;
+}) => {
+  const [runs, setRuns] = useState<RunSummary[]>(seeds?.runs ?? runSeed);
+  const [approvals, setApprovals] = useState<ApprovalRequest[]>(seeds?.approvals ?? approvalSeed);
+  const [exceptions, setExceptions] = useState<ExceptionRequest[]>(seeds?.exceptions ?? exceptionSeed);
+  const [policies, setPolicies] = useState<PolicyRecord[]>(seeds?.policies ?? policySeed);
 
   const updateApproval = useCallback(
     (id: string, status: ApprovalStatus, reviewer: string, notes: string) => {
