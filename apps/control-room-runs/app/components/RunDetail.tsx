@@ -46,6 +46,10 @@ export const RunDetail = ({
           <p className="detail-value">{run.source}</p>
         </div>
         <div>
+          <p className="detail-label">Project</p>
+          <p className="detail-value">{run.project}</p>
+        </div>
+        <div>
           <p className="detail-label">Actor</p>
           <p className="detail-value">{run.actor}</p>
         </div>
