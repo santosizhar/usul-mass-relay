@@ -13,6 +13,9 @@ terminology for the project.
 - `docs/foundation-tracks-development/`: Track checklists, sprint summaries, and roadmap references.
 - `artifacts/`: Versioned outputs and snapshots produced by Runs.
 
+For the techstack mapping of Foundation categories to current repo technologies, see
+`techstack.md`.
+
 ## Track A scope
 
 Track A establishes repository contracts, conventions, and governance documentation. The current
