@@ -26,6 +26,16 @@ type RuntimeSeed = {
   policies: PolicyRecord[];
 };
 
+type GovernancePolicy = {
+  policy_id: string;
+  name: string;
+  owner: string;
+  levels: Array<{
+    level: PolicyRecord["level"];
+    description: string;
+  }>;
+};
+
 const resolveRunsDir = (): string => {
   if (process.env.MASS_RELAY_RUNS_DIR) {
     return process.env.MASS_RELAY_RUNS_DIR;
@@ -33,6 +43,11 @@ const resolveRunsDir = (): string => {
 
   const repoRoot = path.resolve(process.cwd(), "..", "..");
   return path.join(repoRoot, "artifacts", "runs");
+};
+
+const resolvePoliciesDir = (): string => {
+  const repoRoot = path.resolve(process.cwd(), "..", "..");
+  return path.join(repoRoot, "artifacts", "governance", "policies");
 };
 
 const mapRunStatus = (status: RunRecord["status"]): RunSummary["status"] => {
@@ -87,11 +102,44 @@ const loadRunSummaries = (): RunSummary[] => {
   return summaries.length > 0 ? summaries : runSeed;
 };
 
+const mapGovernancePolicy = (policy: GovernancePolicy): PolicyRecord[] => {
+  return policy.levels.map((level) => ({
+    policy_id: `${policy.policy_id}-${level.level}`,
+    name: policy.name,
+    owner: policy.owner,
+    level: level.level,
+    scope: "foundation",
+    description: level.description,
+    enforcement: "active",
+    last_reviewed: new Date().toISOString(),
+    review_status: "stable"
+  }));
+};
+
+const loadPolicyRecords = (): PolicyRecord[] => {
+  const policiesDir = resolvePoliciesDir();
+  if (!fs.existsSync(policiesDir)) {
+    return policies;
+  }
+  const files = fs
+    .readdirSync(policiesDir, { withFileTypes: true })
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
+    .map((entry) => path.join(policiesDir, entry.name));
+
+  const loaded = files.flatMap((file) => {
+    const raw = fs.readFileSync(file, "utf8");
+    const parsed = JSON.parse(raw) as GovernancePolicy;
+    return mapGovernancePolicy(parsed);
+  });
+
+  return loaded.length > 0 ? loaded : policies;
+};
+
 export const loadRuntimeSeeds = async (): Promise<RuntimeSeed> => {
   return {
     runs: loadRunSummaries(),
     approvals,
     exceptions,
-    policies
+    policies: loadPolicyRecords()
   };
 };

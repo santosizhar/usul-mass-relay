@@ -7,6 +7,7 @@ levels used to gate execution capabilities.
 
 - TypeScript interface: `src/governance-policy.ts`
 - JSON schema: `src/governance-policy.schema.json`
+- Enforcement helpers: `src/enforcement.ts`
 
 ## Usage
 
