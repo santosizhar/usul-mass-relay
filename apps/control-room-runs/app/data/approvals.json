@@ -1,0 +1,24 @@
+[
+  {
+    "approval_id": "apr-1001",
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V2",
+    "policy_id": "policy-governance-default",
+    "step_name": "governance_policy_check",
+    "requested_by": "governance.agent",
+    "requested_at": "2024-02-15T09:18:22Z",
+    "risk": "Medium",
+    "summary": "Needs sign-off to access external CRM enrichment API.",
+    "status": "pending"
+  },
+  {
+    "approval_id": "apr-1002",
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V3",
+    "policy_id": "policy-governance-default",
+    "step_name": "sensitive_data_export",
+    "requested_by": "ops.supervisor",
+    "requested_at": "2024-02-15T10:02:54Z",
+    "risk": "High",
+    "summary": "Exporting regulated data to encrypted staging bucket.",
+    "status": "pending"
+  }
+]
