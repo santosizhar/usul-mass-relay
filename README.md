@@ -8,7 +8,7 @@ terminology for the project.
 
 - `apps/`: UI-only applications (Next.js surfaces).
 - `packages/`: Foundation modules (shared platform capabilities).
-- `projects/`: Reference projects built on top of Foundation modules.
+- `projects/`: Reference projects built on top of Foundation modules (Ops Automation Studio, Internal Knowledge Assistant).
 - `docs/`: Documentation, governance, and terminology.
 - `docs/foundation-tracks-development/`: Track checklists, sprint summaries, and roadmap references.
 - `artifacts/`: Versioned outputs and snapshots produced by Runs.
@@ -108,9 +108,9 @@ Track Z finalizes repository conventions and hygiene. The current sprint coverag
 ## Status
 
 Mass Relay currently provides execution-grade scaffolding and documentation for Foundation contracts,
-governance, the governed execution lane, Control Room UI surfaces, and the Ops Automation Studio
-reference project. Runtime services are not yet wired; artifacts and checks are deterministic,
-file-based references pending future integrations.
+governance, the governed execution lane, Control Room UI surfaces, and reference project scaffolds for
+Ops Automation Studio and the Internal Knowledge Assistant. Runtime services are not yet wired;
+artifacts and checks are deterministic, file-based references pending future integrations.
 
 ## Guardrails
 
