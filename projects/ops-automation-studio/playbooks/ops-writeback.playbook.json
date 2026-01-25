@@ -1,0 +1,56 @@
+{
+  "playbook_id": "playbook-ops-writeback",
+  "name": "Ops governed write-back",
+  "version": "1.0.0",
+  "description": "Execute approved operational write-backs through governed execution tools.",
+  "owner": "project.ops-automation-studio",
+  "created_at": "2025-02-10T00:00:00Z",
+  "updated_at": "2025-02-10T00:00:00Z",
+  "runtime": {
+    "lane": "governed-execution",
+    "entrypoint": "projects/ops-automation-studio/workflows/ops-writeback.workflow.md"
+  },
+  "inputs": [
+    "writeback.plan",
+    "writeback.approval",
+    "systems.targets"
+  ],
+  "outputs": [
+    "writeback.result",
+    "run.id",
+    "audit.record"
+  ],
+  "governance": {
+    "policy_id": "gov-policy-core",
+    "level": "A3"
+  },
+  "steps": [
+    {
+      "step_id": "writeback-validate",
+      "name": "Validate approved plan",
+      "purpose": "Confirm approval state and ensure safe execution context.",
+      "action": "propose",
+      "inputs": ["writeback.plan", "writeback.approval"],
+      "outputs": ["writeback.plan.validated"],
+      "requires_human_approval": true
+    },
+    {
+      "step_id": "writeback-execute",
+      "name": "Execute governed write-back",
+      "purpose": "Run governed tool execution with Run logging.",
+      "action": "execute",
+      "inputs": ["writeback.plan.validated", "systems.targets"],
+      "outputs": ["writeback.result", "run.id"],
+      "requires_human_approval": true
+    },
+    {
+      "step_id": "writeback-audit",
+      "name": "Record audit trail",
+      "purpose": "Persist audit record and summarize outcomes.",
+      "action": "summarize",
+      "inputs": ["writeback.result", "run.id"],
+      "outputs": ["audit.record"],
+      "requires_human_approval": false
+    }
+  ]
+}

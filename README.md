@@ -75,6 +75,16 @@ coverage includes:
 - **G4 — Boundary enforcement**: enforcement checks for Foundation vs Project separation.
 - **G5 — Review**: consolidated review of Track G artifacts and gaps.
 
+## Track H scope
+
+Track H delivers the Ops Automation Studio reference project. The current sprint coverage includes:
+
+- **H1 — Config & playbooks**: project config, playbook definitions, and deterministic checks.
+- **H2 — Governed write-back**: governed execution playbook and workflow definitions.
+- **H3 — Mock integrations**: mock integration catalog and deterministic references.
+- **H4 — Demo scenarios**: demo scenarios catalog with expected Run outputs.
+- **H5 — Review**: Track H review of Ops Automation Studio artifacts and gaps.
+
 ## Guardrails
 
 - Prompt Pack refers only to MP1/MP2/MP3 artifacts.

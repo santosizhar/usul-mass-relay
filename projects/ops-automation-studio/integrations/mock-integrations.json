@@ -1,0 +1,50 @@
+{
+  "catalog_id": "mock-integrations-ops-automation",
+  "name": "Ops Automation Studio Mock Integrations",
+  "version": "1.0.0",
+  "owner": "project.ops-automation-studio",
+  "created_at": "2025-02-10T00:00:00Z",
+  "updated_at": "2025-02-10T00:00:00Z",
+  "integrations": [
+    {
+      "integration_id": "integration-ticketing-mock",
+      "name": "Mock ticketing connector",
+      "system": "ticketing",
+      "purpose": "Simulate ticket intake and status updates.",
+      "mock_endpoints": [
+        {
+          "endpoint_id": "ticket-create",
+          "method": "POST",
+          "path": "/tickets",
+          "description": "Create a mock ticket for an ops request."
+        },
+        {
+          "endpoint_id": "ticket-update",
+          "method": "PATCH",
+          "path": "/tickets/{id}",
+          "description": "Update a mock ticket status after write-back."
+        }
+      ]
+    },
+    {
+      "integration_id": "integration-monitoring-mock",
+      "name": "Mock monitoring connector",
+      "system": "monitoring",
+      "purpose": "Simulate alert context and system health snapshots.",
+      "mock_endpoints": [
+        {
+          "endpoint_id": "alerts-list",
+          "method": "GET",
+          "path": "/alerts",
+          "description": "Retrieve mock alert summaries."
+        },
+        {
+          "endpoint_id": "signals-fetch",
+          "method": "GET",
+          "path": "/signals/{id}",
+          "description": "Retrieve mock signal details for triage."
+        }
+      ]
+    }
+  ]
+}

@@ -15,11 +15,13 @@ including governed write-backs and human-in-the-loop (HITL) workflows.
 projects/ops-automation-studio/
   README.md
   configs/
+  integrations/
   workflows/
   playbooks/
+  scenarios/
 ```
 
 ## Notes
 
 - The Control Room remains read-only and will consume outputs from this project.
-- Implementation details will be added in later sprints.
+- Playbook and workflow definitions are static references until execution wiring lands.
