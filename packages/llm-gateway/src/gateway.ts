@@ -1,4 +1,4 @@
-import { RunEvent } from "../../run-instrumentation/src/run-events";
+import { RunEvent } from "../../run/src/run-events";
 
 export type PromptVersionStatus = "draft" | "active" | "deprecated";
 

@@ -5,8 +5,8 @@ This document summarizes the Track B deliverables implemented in sprints B3 and 
 ## Sprint B3 — Instrumentation helpers
 
 Artifacts:
-- Run event contracts in `packages/run-instrumentation/src/run-events.ts`.
-- Run summary and event ordering helpers in `packages/run-instrumentation/src/run-instrumentation.ts`.
+- Run event contracts in `packages/run/src/run-events.ts`.
+- Run summary and event ordering helpers in `packages/run/src/run-instrumentation.ts`.
 - Run event sample in `artifacts/examples/run.events.sample.json`.
 - Run summary sample in `artifacts/examples/run.summary.sample.json`.
 

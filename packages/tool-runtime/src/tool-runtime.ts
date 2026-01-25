@@ -1,10 +1,9 @@
-import { ExecutionSandbox } from "../../execution-sandbox/src/execution-sandbox";
-import { RunEvent, RunEventType } from "../../run-instrumentation/src/run-events";
-import { RunTrace } from "../../run-model/src/run";
-import { ToolDefinition, ToolManifest } from "../../tool-manifest/src/tool-manifest";
-import executionSandboxSchema from "../../execution-sandbox/src/execution-sandbox.schema.json";
-import toolManifestSchema from "../../tool-manifest/src/tool-manifest.schema.json";
-import { SchemaValidationResult, validateAgainstSchema } from "./schema-validation";
+import { ExecutionSandbox } from "../../execution-contracts/src/execution-sandbox";
+import { validateExecutionSandbox, validateToolManifest } from "../../execution-contracts/src/validation";
+import { RunEvent, RunEventType } from "../../run/src/run-events";
+import { RunTrace } from "../../run/src/run";
+import { ToolDefinition, ToolManifest } from "../../execution-contracts/src/tool-manifest";
+import { validateAgainstSchema } from "./schema-validation";
 
 export type ToolExecutionStatus = "success" | "failure";
 
@@ -71,14 +70,6 @@ const buildEventId = (): string => {
 };
 
 const buildTimestamp = (): string => new Date().toISOString();
-
-export const validateToolManifest = (manifest: ToolManifest): SchemaValidationResult => {
-  return validateAgainstSchema(toolManifestSchema, manifest, "tool.manifest");
-};
-
-export const validateExecutionSandbox = (sandbox: ExecutionSandbox): SchemaValidationResult => {
-  return validateAgainstSchema(executionSandboxSchema, sandbox, "execution.sandbox");
-};
 
 const isUnsafeTool = (tool: ToolDefinition): boolean => {
   return (

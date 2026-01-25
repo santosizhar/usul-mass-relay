@@ -8,14 +8,14 @@ validates contract alignment, and lists outstanding gaps.
 - Storage interface contract and sample (`packages/storage-interfaces/src/storage-interfaces.ts`,
   `packages/storage-interfaces/src/storage-interfaces.schema.json`,
   `artifacts/examples/storage.interface.sample.json`).
-- Run persistence contract and sample (`packages/run-storage/src/run-storage.ts`,
-  `packages/run-storage/src/run-storage.schema.json`,
+- Run persistence contract and sample (`packages/run/src/run-storage.ts`,
+  `packages/run/src/run-storage.schema.json`,
   `artifacts/examples/run.storage.sample.json`).
-- Playbook persistence contract and sample (`packages/playbook-persistence/src/playbook-persistence.ts`,
-  `packages/playbook-persistence/src/playbook-persistence.schema.json`,
+- Playbook persistence contract and sample (`packages/config-persistence/src/playbook-persistence.ts`,
+  `packages/config-persistence/src/playbook-persistence.schema.json`,
   `artifacts/examples/playbook.persistence.sample.json`).
-- Project config persistence contract and sample (`packages/project-config-persistence/src/project-config-persistence.ts`,
-  `packages/project-config-persistence/src/project-config-persistence.schema.json`,
+- Project config persistence contract and sample (`packages/config-persistence/src/project-config-persistence.ts`,
+  `packages/config-persistence/src/project-config-persistence.schema.json`,
   `artifacts/examples/project.config.persistence.sample.json`).
 - Track E sprint summaries (`docs/foundation-tracks-development/sprint-e1-e2.md`, `docs/foundation-tracks-development/sprint-e3-e4.md`).
 

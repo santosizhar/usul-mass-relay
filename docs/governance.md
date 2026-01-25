@@ -24,7 +24,7 @@ lanes interact.
 ## Governance policy ladder (A0–A3)
 
 Governance policies define action boundaries for Agent Playbooks and control-plane workflows.
-The canonical schema lives in `packages/governance-policy/src/governance-policy.schema.json`
+The canonical schema lives in `packages/governance-contracts/src/governance-policy.schema.json`
 with a sample record in `artifacts/examples/governance.policy.sample.json`.
 
 Levels:

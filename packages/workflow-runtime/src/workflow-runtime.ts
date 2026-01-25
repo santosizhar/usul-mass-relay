@@ -8,9 +8,9 @@ import {
   WorkflowRunStatus,
   WorkflowStepRecord,
   WorkflowStepStatus
-} from "../../run-model/src/run";
-import { AuditLogEntry, HitlRequest } from "../../hitl-audit/src/hitl";
-import { getRunDir, upsertRun } from "../../run-persistence/src/run-store";
+} from "../../run/src/run";
+import { AuditLogEntry, HitlRequest } from "../../governance-contracts/src/hitl";
+import { getRunDir, upsertRun } from "../../run/src/run-store";
 
 export type WorkflowFailureMode = "halt" | "continue" | "queue-exception";
 export type HitlRequestType = "approval" | "exception";

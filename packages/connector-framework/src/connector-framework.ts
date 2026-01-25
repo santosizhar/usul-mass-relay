@@ -1,4 +1,4 @@
-import type { FactoryObject, FactoryObjectLineage, RunRecord } from "../../run-model/src/run";
+import type { FactoryObject, FactoryObjectLineage, RunRecord } from "../../run/src/run";
 
 export type ChangeType = "created" | "updated" | "deleted" | "unchanged";
 

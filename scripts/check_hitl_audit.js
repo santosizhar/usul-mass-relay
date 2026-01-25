@@ -7,14 +7,14 @@ const repoRoot = path.resolve(__dirname, "..");
 const requestSchemaPath = path.join(
   repoRoot,
   "packages",
-  "hitl-audit",
+  "governance-contracts",
   "src",
   "hitl-request.schema.json"
 );
 const auditSchemaPath = path.join(
   repoRoot,
   "packages",
-  "hitl-audit",
+  "governance-contracts",
   "src",
   "audit-log.schema.json"
 );
