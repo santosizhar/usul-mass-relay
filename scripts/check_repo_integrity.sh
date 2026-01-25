@@ -19,6 +19,9 @@ required_files=(
   docs/track-d/sprint-d1-d2.md
   docs/track-d/sprint-d3-d4.md
   docs/track-d/sprint-d5.md
+  docs/track-g/sprint-g1-g2.md
+  docs/track-g/sprint-g3-g4.md
+  docs/track-g/sprint-g5.md
   artifacts/README.md
   artifacts/examples/run.sample.json
   artifacts/examples/run.export.sample.jsonl
@@ -82,6 +85,10 @@ required_files=(
   scripts/check_python_runner.js
   scripts/check_execution_sandbox.js
   scripts/check_reference_tools.js
+  scripts/check_schema_suite.js
+  scripts/check_golden_runs.js
+  scripts/check_ts_python_contracts.js
+  scripts/check_boundary_enforcement.js
   apps/control-room-runs/README.md
   apps/control-room-runs/config/run-table.json
 )
