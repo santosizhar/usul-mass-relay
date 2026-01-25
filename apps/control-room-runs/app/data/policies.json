@@ -1,0 +1,35 @@
+[
+  {
+    "policy_id": "policy-governance-default",
+    "name": "Governance Baseline",
+    "owner": "risk.team",
+    "level": "A2",
+    "scope": "Control plane approvals",
+    "description": "Requires human sign-off for external integrations and regulated data movement.",
+    "enforcement": "active",
+    "last_reviewed": "2024-01-15T08:00:00Z",
+    "review_status": "stable"
+  },
+  {
+    "policy_id": "policy-execution-sandbox",
+    "name": "Sandbox Execution Guardrails",
+    "owner": "security.ops",
+    "level": "A3",
+    "scope": "Governed tool execution",
+    "description": "Blocks network egress and privileged tool access without exception approval.",
+    "enforcement": "active",
+    "last_reviewed": "2024-02-01T13:30:00Z",
+    "review_status": "needs-review"
+  },
+  {
+    "policy_id": "policy-data-privacy",
+    "name": "Data Privacy Retention",
+    "owner": "privacy.office",
+    "level": "A1",
+    "scope": "Data retention workflows",
+    "description": "Controls retention windows and encryption requirements for sensitive data.",
+    "enforcement": "shadow",
+    "last_reviewed": "2023-12-20T15:12:00Z",
+    "review_status": "expiring"
+  }
+]

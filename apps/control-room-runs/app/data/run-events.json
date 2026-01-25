@@ -53,5 +53,71 @@
     "timestamp": "2024-02-12T16:05:22Z",
     "type": "failure",
     "message": "HITL review rejected"
+  },
+  {
+    "event_id": "evt-0301",
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V2",
+    "timestamp": "2024-02-15T09:15:12Z",
+    "type": "start",
+    "message": "Run started",
+    "metadata": {
+      "lane": "governed-execution"
+    }
+  },
+  {
+    "event_id": "evt-0302",
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V2",
+    "timestamp": "2024-02-15T09:18:22Z",
+    "type": "step",
+    "message": "Approval gate opened for external enrichment"
+  },
+  {
+    "event_id": "evt-0401",
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V3",
+    "timestamp": "2024-02-15T10:00:03Z",
+    "type": "start",
+    "message": "Run started"
+  },
+  {
+    "event_id": "evt-0402",
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V3",
+    "timestamp": "2024-02-15T10:02:54Z",
+    "type": "step",
+    "message": "Export step awaiting human approval"
+  },
+  {
+    "event_id": "evt-0501",
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V4",
+    "timestamp": "2024-02-15T11:18:54Z",
+    "type": "start",
+    "message": "Run started"
+  },
+  {
+    "event_id": "evt-0502",
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V4",
+    "timestamp": "2024-02-15T11:21:09Z",
+    "type": "step",
+    "message": "Exception request created for policy guardrail"
+  },
+  {
+    "event_id": "evt-0601",
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V5",
+    "timestamp": "2024-02-15T12:02:11Z",
+    "type": "start",
+    "message": "Run started"
+  },
+  {
+    "event_id": "evt-0602",
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V5",
+    "timestamp": "2024-02-15T12:05:41Z",
+    "type": "step",
+    "message": "Retention exception pending privacy review"
+  },
+  {
+    "event_id": "evt-0701",
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V6",
+    "timestamp": "2024-02-15T12:45:44Z",
+    "type": "start",
+    "message": "Policy inspection run initiated"
   }
 ]

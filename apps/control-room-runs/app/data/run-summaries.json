@@ -25,5 +25,50 @@
     "purpose": "Human-in-the-loop audit review",
     "status": "failed",
     "trace_id": "trace-example-0003"
+  },
+  {
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V2",
+    "timestamp": "2024-02-15T09:15:12Z",
+    "source": "execution-lane",
+    "actor": "governance.agent",
+    "purpose": "Vendor enrichment requiring approval",
+    "status": "awaiting_approval",
+    "trace_id": "trace-example-0004"
+  },
+  {
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V3",
+    "timestamp": "2024-02-15T10:00:03Z",
+    "source": "control-plane",
+    "actor": "ops.supervisor",
+    "purpose": "Sensitive export requires HITL sign-off",
+    "status": "awaiting_approval",
+    "trace_id": "trace-example-0005"
+  },
+  {
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V4",
+    "timestamp": "2024-02-15T11:18:54Z",
+    "source": "execution-lane",
+    "actor": "sandbox.agent",
+    "purpose": "Exception request for network egress",
+    "status": "awaiting_exception",
+    "trace_id": "trace-example-0006"
+  },
+  {
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V5",
+    "timestamp": "2024-02-15T12:02:11Z",
+    "source": "control-plane",
+    "actor": "privacy.bot",
+    "purpose": "Retention exception needs review",
+    "status": "awaiting_exception",
+    "trace_id": "trace-example-0007"
+  },
+  {
+    "run_id": "01JA2H3M4N5P6Q7R8S9T0U1V6",
+    "timestamp": "2024-02-15T12:45:44Z",
+    "source": "control-plane",
+    "actor": "risk.team",
+    "purpose": "Policy inspection checkpoint",
+    "status": "policy_review",
+    "trace_id": "trace-example-0008"
   }
 ]
